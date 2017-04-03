@@ -1,6 +1,5 @@
-import './styles/tachyons.css';
-import './styles/application.css';
-import App from 'components/App';
+import {$} from '../vendor/vendor';
+import App from './components/App';
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new App();

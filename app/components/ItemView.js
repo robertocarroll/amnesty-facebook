@@ -1,4 +1,4 @@
-import Marionette from 'backbone.marionette';
+import {Marionette} from '../../vendor/vendor';
 import template from '../templates/item.jst';
 
 export default Marionette.View.extend({
