@@ -1,3 +1,4 @@
+import './styles/tachyons.css';
 import './styles/application.css';
 import App from 'components/App';
 
