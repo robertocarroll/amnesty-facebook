@@ -7,12 +7,24 @@ Object.defineProperty(exports, "__esModule", {
 
 var _vendor = require('../../vendor/vendor');
 
+var _vendor2 = _interopRequireDefault(_vendor);
+
+var _LangModel = require('./models/LangModel');
+
+var _LangModel2 = _interopRequireDefault(_LangModel);
+
+var _LangCollection = require('./collections/LangCollection');
+
+var _LangCollection2 = _interopRequireDefault(_LangCollection);
+
 var _ItemView = require('./views/ItemView');
 
 var _ItemView2 = _interopRequireDefault(_ItemView);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var Model = _vendor2.default.Model,
+    Collection = _vendor2.default.Collection;
 exports.default = _vendor.Marionette.Application.extend({
   region: '#app',
 
@@ -21,7 +33,53 @@ exports.default = _vendor.Marionette.Application.extend({
   }
 });
 
-},{"../../vendor/vendor":10,"./views/ItemView":2}],2:[function(require,module,exports){
+},{"../../vendor/vendor":12,"./collections/LangCollection":2,"./models/LangModel":3,"./views/ItemView":4}],2:[function(require,module,exports){
+"use strict";
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var LangCollection = function (_Collection) {
+    _inherits(LangCollection, _Collection);
+
+    function LangCollection(options) {
+        _classCallCheck(this, LangCollection);
+
+        var _this = _possibleConstructorReturn(this, (LangCollection.__proto__ || Object.getPrototypeOf(LangCollection)).call(this, options));
+
+        _this.model = LangModel;
+        url: "../data/data.json";
+        return _this;
+    }
+
+    return LangCollection;
+}(Collection);
+
+},{}],3:[function(require,module,exports){
+"use strict";
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var LangModel = function (_Model) {
+  _inherits(LangModel, _Model);
+
+  function LangModel() {
+    _classCallCheck(this, LangModel);
+
+    return _possibleConstructorReturn(this, (LangModel.__proto__ || Object.getPrototypeOf(LangModel)).apply(this, arguments));
+  }
+
+  return LangModel;
+}(Model);
+
+},{}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40,7 +98,7 @@ exports.default = _vendor.Marionette.View.extend({
   template: _item2.default
 });
 
-},{"../../../vendor/vendor":10,"../../templates/item.jst":4}],3:[function(require,module,exports){
+},{"../../../vendor/vendor":12,"../../templates/item.jst":6}],5:[function(require,module,exports){
 'use strict';
 
 var _vendor = require('../vendor/vendor');
@@ -56,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
   app.start();
 });
 
-},{"../vendor/vendor":10,"./components/App":1}],4:[function(require,module,exports){
+},{"../vendor/vendor":12,"./components/App":1}],6:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -66,7 +124,7 @@ __p+='<div id="content"> <h1>&nbsp;</h1> <h2 class="f1">Welcome!</h2> <ul> <li><
 return __p;
 };
 
-},{"underscore":9}],5:[function(require,module,exports){
+},{"underscore":11}],7:[function(require,module,exports){
 // MarionetteJS (Backbone.Marionette)
 // ----------------------------------
 // v3.0.0
@@ -3308,7 +3366,7 @@ return __p;
 
 
 
-},{"backbone":7,"backbone.radio":6,"underscore":9}],6:[function(require,module,exports){
+},{"backbone":9,"backbone.radio":8,"underscore":11}],8:[function(require,module,exports){
 // Backbone.Radio v2.0.0
 
 (function (global, factory) {
@@ -3659,7 +3717,7 @@ return __p;
 
 }));
 
-},{"backbone":7,"underscore":9}],7:[function(require,module,exports){
+},{"backbone":9,"underscore":11}],9:[function(require,module,exports){
 (function (global){
 //     Backbone.js 1.3.3
 
@@ -5583,7 +5641,7 @@ return __p;
 });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"jquery":8,"underscore":9}],8:[function(require,module,exports){
+},{"jquery":10,"underscore":11}],10:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v1.12.4
  * http://jquery.com/
@@ -16593,7 +16651,7 @@ if ( !noGlobal ) {
 return jQuery;
 }));
 
-},{}],9:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 //     Underscore.js 1.8.3
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -18143,7 +18201,7 @@ return jQuery;
   }
 }.call(this));
 
-},{}],10:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18176,4 +18234,4 @@ exports.$ = _jquery2.default;
 exports.Backbone = _backbone2.default;
 exports.Marionette = _backbone4.default;
 
-},{"backbone":7,"backbone.marionette":5,"jquery":8,"underscore":9}]},{},[3]);
+},{"backbone":9,"backbone.marionette":7,"jquery":10,"underscore":11}]},{},[5]);
