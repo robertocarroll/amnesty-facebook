@@ -1,10 +1,9 @@
 import {Marionette} from '../../vendor/vendor';
-import Backbone from '../../vendor/vendor';
+import {Backbone} from '../../vendor/vendor';
 import LangModel from './models/LangModel';
 import LangCollection from './collections/LangCollection';
 import ItemView from './views/ItemView';
 
-const { Model, Collection } = Backbone;
 
 export default Marionette.Application.extend({
   region: '#app',

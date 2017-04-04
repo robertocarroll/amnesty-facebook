@@ -1,1 +1,1 @@
-class LangModel extends Model {}
+const LangModel = Backbone.Model.extend({});

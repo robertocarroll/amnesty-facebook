@@ -1,9 +1,4 @@
-class LangCollection extends Collection {
-    constructor(options) {
-        super(options);
-        this.model = LangModel;
-        url: "../data/data.json";
-    }
-}
-
-
+const LangCollection = Backbone.Collection.extend({
+    model: LangModel,
+    url: "../data/data.json"
+});

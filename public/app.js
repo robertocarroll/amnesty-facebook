@@ -7,8 +7,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _vendor = require('../../vendor/vendor');
 
-var _vendor2 = _interopRequireDefault(_vendor);
-
 var _LangModel = require('./models/LangModel');
 
 var _LangModel2 = _interopRequireDefault(_LangModel);
@@ -23,8 +21,6 @@ var _ItemView2 = _interopRequireDefault(_ItemView);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Model = _vendor2.default.Model,
-    Collection = _vendor2.default.Collection;
 exports.default = _vendor.Marionette.Application.extend({
   region: '#app',
 
@@ -36,48 +32,15 @@ exports.default = _vendor.Marionette.Application.extend({
 },{"../../vendor/vendor":12,"./collections/LangCollection":2,"./models/LangModel":3,"./views/ItemView":4}],2:[function(require,module,exports){
 "use strict";
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var LangCollection = function (_Collection) {
-    _inherits(LangCollection, _Collection);
-
-    function LangCollection(options) {
-        _classCallCheck(this, LangCollection);
-
-        var _this = _possibleConstructorReturn(this, (LangCollection.__proto__ || Object.getPrototypeOf(LangCollection)).call(this, options));
-
-        _this.model = LangModel;
-        url: "../data/data.json";
-        return _this;
-    }
-
-    return LangCollection;
-}(Collection);
+var LangCollection = Backbone.Collection.extend({
+    model: LangModel,
+    url: "../data/data.json"
+});
 
 },{}],3:[function(require,module,exports){
 "use strict";
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var LangModel = function (_Model) {
-  _inherits(LangModel, _Model);
-
-  function LangModel() {
-    _classCallCheck(this, LangModel);
-
-    return _possibleConstructorReturn(this, (LangModel.__proto__ || Object.getPrototypeOf(LangModel)).apply(this, arguments));
-  }
-
-  return LangModel;
-}(Model);
+var LangModel = Backbone.Model.extend({});
 
 },{}],4:[function(require,module,exports){
 'use strict';
