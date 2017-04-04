@@ -1,5 +1,5 @@
 import {Marionette} from '../../vendor/vendor';
-import ItemView from './ItemView';
+import ItemView from './views/ItemView';
 
 export default Marionette.Application.extend({
   region: '#app',

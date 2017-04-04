@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _vendor = require('../../vendor/vendor');
 
-var _ItemView = require('./ItemView');
+var _ItemView = require('./views/ItemView');
 
 var _ItemView2 = _interopRequireDefault(_ItemView);
 
@@ -21,16 +21,16 @@ exports.default = _vendor.Marionette.Application.extend({
   }
 });
 
-},{"../../vendor/vendor":10,"./ItemView":2}],2:[function(require,module,exports){
+},{"../../vendor/vendor":10,"./views/ItemView":2}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _vendor = require('../../vendor/vendor');
+var _vendor = require('../../../vendor/vendor');
 
-var _item = require('../templates/item.jst');
+var _item = require('../../templates/item.jst');
 
 var _item2 = _interopRequireDefault(_item);
 
@@ -40,7 +40,7 @@ exports.default = _vendor.Marionette.View.extend({
   template: _item2.default
 });
 
-},{"../../vendor/vendor":10,"../templates/item.jst":4}],3:[function(require,module,exports){
+},{"../../../vendor/vendor":10,"../../templates/item.jst":4}],3:[function(require,module,exports){
 'use strict';
 
 var _vendor = require('../vendor/vendor');
@@ -61,7 +61,7 @@ var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<div id="content"> <h1>&nbsp;</h1> <h2>Welcome!</h2> <ul> <li><a href="http://browserify.org/">Browserify homepage</a></li> <li><a href="http://marionettejs.com/">Marionette.js homepage</a></li> </ul> </div>';
+__p+='<div id="content"> <h1>&nbsp;</h1> <h2 class="f1">Welcome!</h2> <ul> <li><a href="http://browserify.org/">Browserify homepage</a></li> <li><a href="http://marionettejs.com/">Marionette.js homepage</a></li> </ul> </div>';
 }
 return __p;
 };
