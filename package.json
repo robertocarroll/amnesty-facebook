@@ -1,0 +1,27 @@
+{
+  "name": "amnesty-facebook",
+  "version": "1.0.0",
+  "description": "Web app for campaign",
+  "main": "app/index.html",
+  "scripts": {
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wearethoughtfox/amnesty-facebook.git"
+  },
+  "keywords": [
+
+  ],
+  "author": "Robert Carroll",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/wearethoughtfox/amnesty-facebook/issues"
+  },
+  "homepage": "https://github.com/wearethoughtfox/amnesty-facebook#readme",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  },
+  "dependencies": {
+  }
+}
