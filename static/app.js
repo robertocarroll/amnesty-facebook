@@ -1,17 +1,10 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 require('./setup.js');
-
-var HelloWorld = Backbone.Marionette.LayoutView.extend({
-  el: '#app',  // 3
-  template: require('./templates/layout.html')
-});
-
-var hello = new HelloWorld();  // 5
-
-hello.render();  // 6
+require('./views/hello.js');
 
 
-},{"./setup.js":2,"./templates/layout.html":3}],2:[function(require,module,exports){
+
+},{"./setup.js":2,"./views/hello.js":4}],2:[function(require,module,exports){
 (function (global){
 window._ = require('underscore'); // Backbone can't see it otherwise
 
@@ -25,7 +18,7 @@ Backbone.$ = window.$; // Use the jQuery from the script tag
 Backbone.Marionette = require('backbone.marionette');
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"backbone":7,"backbone.marionette":5,"underscore":9}],3:[function(require,module,exports){
+},{"backbone":8,"backbone.marionette":6,"underscore":10}],3:[function(require,module,exports){
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
@@ -35,6 +28,16 @@ return __p;
 };
 
 },{}],4:[function(require,module,exports){
+var HelloWorld = Backbone.Marionette.LayoutView.extend({
+  el: '#app',  // 3
+  template: require('./../templates/layout.html')
+});
+
+var hello = new HelloWorld();  // 5
+
+hello.render();  // 6
+
+},{"./../templates/layout.html":3}],5:[function(require,module,exports){
 // Backbone.BabySitter
 // -------------------
 // v0.1.11
@@ -226,7 +229,7 @@ return __p;
 
 }));
 
-},{"backbone":7,"underscore":9}],5:[function(require,module,exports){
+},{"backbone":8,"underscore":10}],6:[function(require,module,exports){
 // MarionetteJS (Backbone.Marionette)
 // ----------------------------------
 // v2.4.7
@@ -3740,7 +3743,7 @@ return __p;
   return Marionette;
 }));
 
-},{"backbone":7,"backbone.babysitter":4,"backbone.wreqr":6,"underscore":9}],6:[function(require,module,exports){
+},{"backbone":8,"backbone.babysitter":5,"backbone.wreqr":7,"underscore":10}],7:[function(require,module,exports){
 // Backbone.Wreqr (Backbone.Marionette)
 // ----------------------------------
 // v1.4.0
@@ -4177,7 +4180,7 @@ return __p;
 
 }));
 
-},{"backbone":7,"underscore":9}],7:[function(require,module,exports){
+},{"backbone":8,"underscore":10}],8:[function(require,module,exports){
 (function (global){
 //     Backbone.js 1.3.3
 
@@ -6101,7 +6104,7 @@ return __p;
 });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"jquery":8,"underscore":9}],8:[function(require,module,exports){
+},{"jquery":9,"underscore":10}],9:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.2.1
  * https://jquery.com/
@@ -16356,7 +16359,7 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 //     Underscore.js 1.8.3
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
