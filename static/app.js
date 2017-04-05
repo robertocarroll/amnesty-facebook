@@ -17,12 +17,27 @@ global.Backbone = Backbone;
 Backbone.$ = window.$; // Use the jQuery from the script tag
 Backbone.Marionette = require('backbone.marionette');
 
+var data = {
+  "LANG" : "En",
+  "1-NOMINATE" : "Nominate",
+  "1-NOMINATE-DESC" : "Experienced BRAVE? Celebrate BRAVE people in your life: log in to nominate them now.",
+  "1-NOMINATE-BTN" : "Nominate with Facebook",
+  "2-NOMINATE-BTN" : "Back",
+  "2-NOMINATE-CALL" : "Select your BRAVE Facebook friends",
+  "3-NOMINATE-CALL" : "Share why you think they're BRAVE",
+  "3-NOMINATE-BTN" : "Back",
+  "3-NOMINATE-BTN-2" : "Submit"
+};
+
+
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"backbone":8,"backbone.marionette":6,"underscore":10}],3:[function(require,module,exports){
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<p>Hello, world!</p>\n';
+__p+='<p>Hello, world!</p>\n\n<h1>Hello, '+
+((__t=( contextKey ))==null?'':_.escape(__t))+
+'</h1>\n\n';
 }
 return __p;
 };
@@ -30,7 +45,11 @@ return __p;
 },{}],4:[function(require,module,exports){
 var HelloWorld = Backbone.Marionette.LayoutView.extend({
   el: '#app',  // 3
-  template: require('./../templates/layout.html')
+  template: require('./../templates/layout.html'),
+
+  templateContext: {
+    contextKey: 'world'
+  }
 });
 
 var hello = new HelloWorld();  // 5
