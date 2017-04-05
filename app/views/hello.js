@@ -1,5 +1,5 @@
 var HelloWorld = Backbone.Marionette.View.extend({
-  el: '#app',  // 3
+  el: '#app',
   template: _.template('<h1>Hello, <%- contextKey %></h1>'),
 
   templateContext: {
