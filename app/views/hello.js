@@ -1,9 +1,9 @@
-var HelloWorld = Backbone.Marionette.LayoutView.extend({
+var HelloWorld = Backbone.Marionette.View.extend({
   el: '#app',  // 3
-  template: require('./../templates/layout.html'),
+  template: _.template('<h1>Hello, <%- contextKey %></h1>'),
 
   templateContext: {
-    contextKey: 'world'
+    contextKey: 'world boo'
   }
 });
 
