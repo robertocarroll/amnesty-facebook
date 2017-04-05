@@ -1,4 +1,4 @@
-var data = {
+var textStrings = {
   "LANG" : "En",
   "1NOMINATE" : "Nominate",
   "1NOMINATE_DESC" : "Experienced BRAVE? Celebrate BRAVE people in your life: log in to nominate them now.",

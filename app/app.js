@@ -3,7 +3,7 @@ var App = Backbone.Marionette.Application.extend({
 
   onStart: function() {
     this.showView(new HelloWorld());
-    console.log (data);
+    console.log (textStrings);
   }
 });
 
