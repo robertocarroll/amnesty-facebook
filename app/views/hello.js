@@ -17,7 +17,7 @@ var HelloWorld = Backbone.Marionette.View.extend({
         } else {
           console.log ("The person is not logged into this app or we are unable to tell.");
         }
-      }, {scope:'public_profile', return_scopes:true});
+      }, {scope:'public_profile,user_friends,publish_actions', return_scopes:true});
     }
 });
 
