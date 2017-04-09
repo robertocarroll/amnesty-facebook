@@ -15,4 +15,11 @@
       version     : 'v2.8'
     });
     FB.AppEvents.logPageView();
+
+    FB.getLoginStatus(function (response) {
+          console.log('FB resp:', response, response.status);
+
+        });
   };
+
+
