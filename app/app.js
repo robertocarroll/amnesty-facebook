@@ -5,6 +5,22 @@ var App = Backbone.Marionette.Application.extend({
     var hello = new HelloWorld();
     hello.render();
     this.showView(hello);
+  },
+
+  onFacebookLogin: function (response) {
+    console.log("Logged in to Facebook!");
+    console.log(response);
+    console.log(response.authResponse);
+
+    FB.api("/me", function (user) {
+    	console.log("We got a user!");
+    	console.log(user);
+    });
+
+    FB.api("/me/taggable_friends", function (response) {
+    	console.log("We got taggable friends!");
+    	console.log(response);
+    });
   }
 });
 
