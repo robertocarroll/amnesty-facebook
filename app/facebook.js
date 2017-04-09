@@ -15,23 +15,6 @@
       version     : 'v2.8'
     });
     FB.AppEvents.logPageView();
-
-    FB.getLoginStatus(function (response) {
-      statusChangeCallback(response);
-    });
-
-    function statusChangeCallback(response) {
-      console.log('statusChangeCallback');
-      console.log(response);
-
-     if (response.status === 'connected') {
-      console.log("logged in");
-     }
-
-     else {
-      console.log("Not logged in");
-     }
-    }
   };
 
 
