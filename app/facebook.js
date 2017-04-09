@@ -17,9 +17,21 @@
     FB.AppEvents.logPageView();
 
     FB.getLoginStatus(function (response) {
-          console.log('FB resp:', response, response.status);
+      statusChangeCallback(response);
+    });
 
-        });
+    function statusChangeCallback(response) {
+      console.log('statusChangeCallback');
+      console.log(response);
+
+     if (response.status === 'connected') {
+      console.log("logged in");
+     }
+
+     else {
+      console.log("Not logged in");
+     }
+    }
   };
 
 
