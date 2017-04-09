@@ -2,7 +2,9 @@ var App = Backbone.Marionette.Application.extend({
   region: '#app',
 
   onStart: function() {
-    this.showView(new HelloWorld());
+    var hello = new HelloWorld();
+    hello.render();
+    this.showView(hello);
   }
 });
 

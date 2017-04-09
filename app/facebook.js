@@ -15,6 +15,7 @@
       version     : 'v2.8'
     });
     FB.AppEvents.logPageView();
+    console.log("FB.init called");
   };
 
 

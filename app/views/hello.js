@@ -9,6 +9,7 @@ var HelloWorld = Backbone.Marionette.View.extend({
     },
 
    login: function () {
+      console.log ("log in button fired");
       FB.login(function(response) {
         if (response.status === 'connected') {
           console.log ("logged in");
@@ -19,5 +20,4 @@ var HelloWorld = Backbone.Marionette.View.extend({
     }
 });
 
-var hello = new HelloWorld();
-hello.render();
+
