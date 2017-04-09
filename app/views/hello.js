@@ -7,5 +7,4 @@ var HelloWorld = Backbone.Marionette.View.extend({
 });
 
 var hello = new HelloWorld();
-
 hello.render();
