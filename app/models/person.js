@@ -6,6 +6,20 @@ var Person = Backbone.Model.extend({
     initialize: function(){},
 
     login: function(){
+
+      this._getuserdata = function (callback) {
+        console.log('_getuserdata called;');
+        FB.api("/me", function (user) {
+          console.log("We got a user!");
+          this.set ({
+                facebookID: user['id'],
+                name: user['name']
+              }, {
+                silent: true
+              });
+        });
+      }
+
       FB.login(function(response) {
         if (response.status === 'connected') {
           console.log ("logged in");
