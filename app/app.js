@@ -16,18 +16,24 @@ var App = Backbone.Marionette.Application.extend({
     FB.api("/me/taggable_friends", function (response) {
       console.log("We got taggable friends!");
       console.log(response);
-      //new collection with response
-      var amnestyFriends = new Friends (response.data);
+      amnestyApp.onGetFriends(response);
+    });
+  },
 
-      console.log ("collection is " + amnestyFriends.length);
+  onGetFriends: function (response) {
+
+
+    //new collection with response
+      var list = new Friends (response.data);
+
+      console.log ("collection is " + list.length);
 
       //new view with collection
-      var friends = new PickFriends({
-        collection: amnestyFriends
+      var myFriends = new TableView({
+        collection: list
       });
 
-      friends.render();
-    });
+      myFriends.render();
   }
 });
 

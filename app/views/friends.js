@@ -1,18 +1,17 @@
-var PickFriends = Backbone.Marionette.View.extend({
-  tagName: 'friendsList',
-  className: 'friendsList',
-  template: '#friendsList',
+var TableView = Backbone.Marionette.View.extend({
+  tagName: 'table',
+  className: 'table table-hover',
+  template: '#table',
 
-  templateContext: _.pick(textStrings, "_1NOMINATE", "_1NOMINATE_DESC", "_2NOMINATE_BTN","_2NOMINATE_CALL"),
   regions: {
     body: {
-      el: 'friendsListBody',
+      el: 'tbody',
       replaceElement: true
     }
   },
 
   onRender: function() {
-    this.showChildView('body', new FriendsList({
+    this.showChildView('body', new TableBody({
       collection: this.collection
     }));
   }
