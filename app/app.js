@@ -22,7 +22,10 @@ var App = Backbone.Marionette.Application.extend({
       console.log ("collection is " + amnestyFriends.length);
 
       //new view with collection
-      var friends = new PickFriends({collection: amnestyFriends});
+      var friends = new PickFriends({
+        collection: amnestyFriends
+      });
+
       friends.render();
     });
   }
