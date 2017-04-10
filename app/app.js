@@ -17,7 +17,9 @@ var App = Backbone.Marionette.Application.extend({
       console.log("We got taggable friends!");
       console.log(response);
       //new collection with response
-      var amnestyFriends = new Friends (response);
+      var amnestyFriends = new Friends (response.data);
+
+      console.log ("collection is " + amnestyFriends.length);
 
       //new view with collection
       var friends = new PickFriends({collection: amnestyFriends});
