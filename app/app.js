@@ -15,7 +15,7 @@ var App = Backbone.Marionette.Application.extend({
     FB.api("/me", function (user) {
     	console.log("We got a user!");
 
-      amnnestyUser = new person(user);
+      amnnestyUser = new Person(user);
       console.log(amnnestyUser);
     });
 

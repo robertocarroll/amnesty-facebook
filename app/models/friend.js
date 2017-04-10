@@ -1,6 +1,7 @@
-var Person = Backbone.Model.extend({
+var Friend = Backbone.Model.extend({
     defaults: {
       facebookID: null,
       name: null,
+      picture: null
     }
 });
