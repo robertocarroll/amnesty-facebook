@@ -22,10 +22,15 @@
       <a class="btn-login amnesty-font f4 link dim ph5 pv3 mb2 dib ttu black bg-amnesty-yellow"><%- _1NOMINATE_BTN %></a>
     </script>
 
-    <script id="row-template" type="text/x-underscore-template" >
-
-      <td><%- name %></td>
-      <td><img src="<%- picture.data.url %>" alt="<%- name %>"></td>
+    <script id="friendslistitem" type="text/x-underscore-template" >
+      <article class="dt w-100 bb b--black-05 pb2 mt2" href="#0">
+      <div class="dtc w2 w3-ns v-mid">
+        <img src="<%- picture.data.url %>" class="ba b--black-10 db br2 w2 w3-ns h2 h3-ns"/>
+      </div>
+      <div class="dtc v-mid pl3">
+        <h1 class="f6 f5-ns fw6 lh-title black mv0"><%- name %></h1>
+      </div>
+    </article>
 
     </script>
 

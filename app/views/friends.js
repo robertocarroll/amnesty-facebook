@@ -4,7 +4,7 @@ var FriendsView = Backbone.Marionette.View.extend({
   className: 'table table-hover',
   template: '#table',
 
-  templateContext: _.pick(textStrings, "_1NOMINATE_DESC"),
+  templateContext: _.pick(textStrings, "_1NOMINATE","_1NOMINATE_DESC"),
 
   regions: {
     body: {
