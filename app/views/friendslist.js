@@ -1,4 +1,4 @@
 var FriendsList = Backbone.Marionette.CollectionView.extend({
-  tagName: 'tbody',
+  tagName: 'div',
   childView: FriendsListItem
 });
