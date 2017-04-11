@@ -1,4 +1,4 @@
 var FriendsListItem = Backbone.Marionette.View.extend({
-  tagName: 'article',
+  tagName: 'tr',
   template: '#friendslistitem'
 });

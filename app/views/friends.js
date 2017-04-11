@@ -2,9 +2,9 @@ var FriendsView = Backbone.Marionette.View.extend({
   el: '#app',
   tagName: 'table',
   className: 'table table-hover',
-  template: '#table',
+  template: '#friends',
 
-  templateContext: _.pick(textStrings, "_1NOMINATE","_1NOMINATE_DESC"),
+  templateContext: _.pick(textStrings, "_1NOMINATE_DESC"),
 
   regions: {
     body: {

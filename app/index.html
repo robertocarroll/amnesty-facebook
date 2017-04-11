@@ -23,6 +23,7 @@
     </script>
 
     <script id="friendslistitem" type="text/x-underscore-template" >
+
       <article class="dt w-100 bb b--black-05 pb2 mt2" href="#0">
       <div class="dtc w2 w3-ns v-mid">
         <img src="<%- picture.data.url %>" class="ba b--black-10 db br2 w2 w3-ns h2 h3-ns"/>
@@ -34,13 +35,15 @@
 
     </script>
 
-    <script id="table" type="text/x-underscore-template" >
+    <script id="friends" type="text/x-underscore-template" >
+          <%- _1NOMINATE_DESC %>
           <thead>
           <tr>
-            <th>ID <%- _1NOMINATE_DESC %></th>
+            <th>ID </th>
             <th>Body</th>
           </tr>
         </thead>
+        <div id="fList"></div>
         <tbody></tbody>
     </script>
 
