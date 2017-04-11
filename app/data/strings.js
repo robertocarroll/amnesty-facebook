@@ -1,7 +1,8 @@
 var textStrings = {
   "LANG" : "En",
   "_1NOMINATE" : "Nominate",
-  "_1NOMINATE_DESC" : "Experienced BRAVE? Celebrate BRAVE people in your life: log in to nominate them now.",
+  "_1NOMINATE_DESC" : "Experienced BRAVE? Celebrate BRAVE people in your life.",
+  "_1NOMINATE_CALL" : "Log in to nominate them now.",
   "_1NOMINATE_BTN" : "Nominate with Facebook",
   "_2NOMINATE_BTN" : "Back",
   "_2NOMINATE_CALL" : "Select your BRAVE Facebook friends",
