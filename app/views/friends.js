@@ -1,4 +1,4 @@
-var TableView = Backbone.Marionette.View.extend({
+var FriendsView = Backbone.Marionette.View.extend({
   el: '#app',
   tagName: 'table',
   className: 'table table-hover',
@@ -14,7 +14,7 @@ var TableView = Backbone.Marionette.View.extend({
   },
 
   onRender: function() {
-    this.showChildView('body', new TableBody({
+    this.showChildView('body', new FriendsList({
       collection: this.collection
     }));
   }

@@ -29,7 +29,7 @@ var App = Backbone.Marionette.Application.extend({
       console.log ("collection is " + list.length);
 
       //new view with collection
-      var myFriends = new TableView({
+      var myFriends = new FriendsView({
         collection: list
       });
 
