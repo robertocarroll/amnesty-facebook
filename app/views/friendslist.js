@@ -8,8 +8,8 @@ var FriendsList = Backbone.Marionette.CollectionView.extend({
   },
 
   itemSelected: function(childView) {
-      var name = childView.model.get("name");
-      console.log(name);
+      var selectedID = childView.model.get("id");
+      console.log(selectedID);
       var share = new Share();
       share.render();
   }

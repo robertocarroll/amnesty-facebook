@@ -22,10 +22,11 @@ var App = Backbone.Marionette.Application.extend({
 
   onGetFriends: function (response) {
 
-    //new collection with response
+      //check the contents of the API call
+      // console.log ("facebook API " + JSON.stringify(response.data));
+      //new collection with response
       var list = new Friends (response.data);
-
-      console.log ("collection is " + list.length);
+      // console.log ("collection is " + list.length);
 
       //new view with collection
       var myFriends = new FriendsView ({
@@ -33,7 +34,25 @@ var App = Backbone.Marionette.Application.extend({
       });
 
       myFriends.render();
-  }
+  },
+
+  postToFacebook: function() {
+      FB.api(
+          "/me/feed",
+          "POST",
+          {
+              "message": "This is a test message",
+              "tags": "user id of tagged friend",
+              "place": "Page ID of a location associated with this post."
+          },
+          function (response) {
+            if (response && !response.error) {
+              /* handle the result */
+            }
+          }
+      );
+    }
+
 });
 
 var amnestyApp = new App();
