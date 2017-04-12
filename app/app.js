@@ -50,11 +50,11 @@ var App = Backbone.Marionette.Application.extend({
           function (response) {
             if (response && !response.error) {
               console.log ('Success - Post ID: ' + response.id);
+              var success = new Success();
+              success.render();
             }
             else{
               console.log(response.error);
-              var success = new Success();
-              success.render();
             }
           }
       );

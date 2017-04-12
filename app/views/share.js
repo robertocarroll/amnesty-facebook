@@ -10,12 +10,10 @@ var Share = Backbone.Marionette.View.extend({
     onSubmit: function(e) {
         e.preventDefault();
         var amnestyMessage = $("textarea").val();
-        console.log(amnestyMessage);
-
+        var amnestyUserID = this.model.id;
         var facebookPost = {
           "message": amnestyMessage,
-          "tags": "user id of tagged friend",
-          "place": "Page ID of a location associated with this post."
+          "tags": amnestyUserID
         };
 
         amnestyApp.postToFacebook(facebookPost);
