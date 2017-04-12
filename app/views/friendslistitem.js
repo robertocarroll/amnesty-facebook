@@ -4,6 +4,6 @@ var FriendsListItem = Backbone.Marionette.View.extend({
   template: '#friendslistitem',
 
   triggers: {
-    'click .friends-list-item': 'select:item'
+    'click': 'select:item'
   }
 });

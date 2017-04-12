@@ -8,9 +8,7 @@ var FriendsList = Backbone.Marionette.CollectionView.extend({
   },
 
   itemSelected: function(childView) {
-      e.preventDefault();
-      console.log (e);
       var name = childView.model.get("name");
-      alert(name);
+      console.log(name);
   }
 });
