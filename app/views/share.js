@@ -9,6 +9,8 @@ var Share = Backbone.Marionette.View.extend({
     onSubmit: function(e) {
         e.preventDefault();
         var amnestyMessage = $("textarea").val();
+
         console.log(amnestyMessage);
+
     }
-});
+  });
