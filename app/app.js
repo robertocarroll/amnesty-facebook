@@ -22,14 +22,13 @@ var App = Backbone.Marionette.Application.extend({
 
   onGetFriends: function (response) {
 
-
     //new collection with response
       var list = new Friends (response.data);
 
       console.log ("collection is " + list.length);
 
       //new view with collection
-      var myFriends = new FriendsView({
+      var myFriends = new FriendsView ({
         collection: list
       });
 
