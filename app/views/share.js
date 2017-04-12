@@ -6,11 +6,18 @@ var Share = Backbone.Marionette.View.extend({
   events: {
         "click .shareForm": "onSubmit"
     },
+
     onSubmit: function(e) {
         e.preventDefault();
         var amnestyMessage = $("textarea").val();
-
         console.log(amnestyMessage);
 
+        var facebookPost = {
+          "message": amnestyMessage,
+          "tags": "user id of tagged friend",
+          "place": "Page ID of a location associated with this post."
+        };
+
+        amnestyApp.postToFacebook(facebookPost);
     }
   });

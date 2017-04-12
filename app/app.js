@@ -36,15 +36,17 @@ var App = Backbone.Marionette.Application.extend({
       myFriends.render();
   },
 
-  postToFacebook: function() {
-      FB.api(
-          "/me/feed",
-          "POST",
-          {
+  postToFacebook: function(facebookPost) {
+ /*     {
               "message": "This is a test message",
               "tags": "user id of tagged friend",
               "place": "Page ID of a location associated with this post."
-          },
+          }
+*/    console.log("posting to Facebook " + JSON.stringify(facebookPost));
+      FB.api(
+          "/me/feed",
+          "POST",
+          facebookPost,
           function (response) {
             if (response && !response.error) {
               /* handle the result */
