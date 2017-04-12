@@ -7,7 +7,7 @@ var FriendsView = Backbone.Marionette.View.extend({
 
   regions: {
     body: {
-      el: '.friendsList',
+      el: '.friendsContainer',
       replaceElement: true
     }
   },

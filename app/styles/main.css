@@ -18,3 +18,17 @@ h1, h2, h3, h4, h5, h6, .amnesty-font  {
 .bg-amnesty-yellow {
   background-color: #ffff00;
 }
+
+.friendsWrapper {
+  position: relative;
+  min-height: 45rem;
+}
+
+.friendsContainer {
+  position: absolute;
+  height: 50%;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  width: 100%;
+}
