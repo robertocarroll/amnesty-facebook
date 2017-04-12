@@ -8,5 +8,9 @@ var textStrings = {
   "_2NOMINATE_CALL" : "Select your BRAVE Facebook friend",
   "_3NOMINATE_CALL" : "Share why you think they're BRAVE",
   "_3NOMINATE_BTN" : "Back",
-  "_3NOMINATE_BTN_2" : "Submit"
+  "_3NOMINATE_BTN_2" : "Submit",
+  "_4NOMINATE" : "Nominated",
+  "_4NOMINATE_DESC" : "Thanks for sharing BRAVE! Nominate another friend or tell your friends.",
+  "_4NOMINATE_BTN" : "Tell your friends",
+  "_4NOMINATE_BTN_2" : "Nominate another person"
 };

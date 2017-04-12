@@ -49,7 +49,12 @@ var App = Backbone.Marionette.Application.extend({
           facebookPost,
           function (response) {
             if (response && !response.error) {
-              /* handle the result */
+              console.log ('Success - Post ID: ' + response.id);
+            }
+            else{
+              console.log(response.error);
+              var success = new Success();
+              success.render();
             }
           }
       );
