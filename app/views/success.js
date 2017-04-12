@@ -14,7 +14,12 @@ var Success = Backbone.Marionette.View.extend({
     },
 
     onTellFriends: function(e) {
+      var shareUrl = window.location.href;
 
+      FB.ui({
+        method: 'share',
+        href: shareUrl,
+      }, function(response){});
     }
 
 });
