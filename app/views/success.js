@@ -11,14 +11,16 @@ var Success = Backbone.Marionette.View.extend({
     onNominateAgain: function(e) {
        //how to render a cached view?
        //do we need to remove the nominated friend from the list or not?
+
+       console.log ("nominate again fired");
     },
 
     onTellFriends: function(e) {
-      var shareUrl = window.location.href;
+      // var shareUrl = window.location.href;
 
       FB.ui({
         method: 'share',
-        href: shareUrl,
+        href: 'https://amnesty.org',
       }, function(response){});
     }
 
