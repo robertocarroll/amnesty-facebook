@@ -10,5 +10,7 @@ var FriendsList = Backbone.Marionette.CollectionView.extend({
   itemSelected: function(childView) {
       var name = childView.model.get("name");
       console.log(name);
+      var share = new Share();
+      share.render();
   }
 });
