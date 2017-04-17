@@ -15,5 +15,13 @@ var FriendsView = Backbone.Marionette.View.extend({
     this.showChildView('body', new FriendsList({
       collection: this.collection
     }));
+  },
+
+  events: {
+      'click #next': 'next'
+    },
+
+   next: function () {
+    console.log(this.collection);
   }
 });

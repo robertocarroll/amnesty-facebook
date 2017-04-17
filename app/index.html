@@ -20,7 +20,18 @@
       <h1 class="ttu f1 f-headline-l mb1"><%- _1NOMINATE %></h1>
       <p class="pb4-ns"><%- _1NOMINATE_DESC %></p>
       <p class="pb4-ns"><%- _1NOMINATE_CALL %></p>
+      <div id="loadFacebook">
+       <p class="pb4-ns"><%- _1NOMINATE_LOADING %></p>
+        <a class="btn-login amnesty-font f4 link dim ph5 pv3 mb2 dib ttu black bg-amnesty-yellow"><%- _1NOMINATE_BTN %></a>
+       </div>
+    </script>
+
+    <script id="hellobtn" type="text/x-underscore-template" >
       <a class="btn-login amnesty-font f4 link dim ph5 pv3 mb2 dib ttu black bg-amnesty-yellow"><%- _1NOMINATE_BTN %></a>
+    </script>
+
+    <script id="helloerror" type="text/x-underscore-template" >
+      <p class="pb4-ns"><%- _1NOMINATE_ERROR %></p>
     </script>
 
     <script id="friendslistitem" type="text/x-underscore-template" >
@@ -39,6 +50,22 @@
           <div class="friendsWrapper">
             <div class="friendsContainer"></div>
           </div>
+          <div class="flex items-center justify-center pa4">
+          <a href="#0" id="previous" class="f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">
+              <svg class="w1" data-icon="chevronLeft" viewBox="0 0 32 32" style="fill:currentcolor">
+                <title>chevronLeft icon</title>
+                <path d="M20 1 L24 5 L14 16 L24 27 L20 31 L6 16 z"></path>
+              </svg>
+            <span class="pl1">Previous</span>
+          </a>
+          <a href="#0" id="next" class="f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box">
+            <span class="pr1">Next</span>
+            <svg class="w1" data-icon="chevronRight" viewBox="0 0 32 32" style="fill:currentcolor">
+              <title>chevronRight icon</title>
+              <path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z"></path>
+            </svg>
+          </a>
+        </div>
     </script>
 
     <script id="share" type="text/x-underscore-template" >
