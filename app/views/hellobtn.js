@@ -1,5 +1,4 @@
 var HelloBtn = Backbone.Marionette.View.extend({
-  el: '#loadedFacebook',
   template: '#hellobtn',
 
   templateContext: _.pick(textStrings, "_1NOMINATE_BTN"),
