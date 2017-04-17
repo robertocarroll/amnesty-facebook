@@ -1,7 +1,7 @@
-var FriendsList = Backbone.Marionette.CollectionView.extend({
+amnestyApp.Views.FriendsList = Backbone.Marionette.CollectionView.extend({
   tagName: 'div',
   className: 'friendsContainer bg-white-80',
-  childView: FriendsListItem,
+  childView: amnestyApp.Views.FriendsListItem,
 
   childViewEvents: {
     'select:item': 'itemSelected'
@@ -10,7 +10,7 @@ var FriendsList = Backbone.Marionette.CollectionView.extend({
   itemSelected: function(childView) {
       var selectedModel = childView.model;
       console.log(selectedModel);
-      var share = new Share({
+      var share = new amnestyApp.Views.Share({
          model: selectedModel
         }
       );

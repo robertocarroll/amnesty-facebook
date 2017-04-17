@@ -1,4 +1,4 @@
-var FriendsView = Backbone.Marionette.View.extend({
+amnestyApp.Views.FriendsView = Backbone.Marionette.View.extend({
   el: '#app',
   template: '#friends',
 
@@ -12,7 +12,7 @@ var FriendsView = Backbone.Marionette.View.extend({
   },
 
   onRender: function() {
-    this.showChildView('body', new FriendsList({
+    this.showChildView('body', new amnestyApp.Views.FriendsList({
       collection: this.collection
     }));
   },

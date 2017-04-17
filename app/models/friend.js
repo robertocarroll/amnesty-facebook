@@ -1,4 +1,4 @@
-var Friend = Backbone.Model.extend({
+amnestyApp.Models.Friend = Backbone.Model.extend({
     defaults: {
       id: null,
       name: null,

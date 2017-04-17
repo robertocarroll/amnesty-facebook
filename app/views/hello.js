@@ -1,4 +1,4 @@
-var HelloWorld = Backbone.Marionette.View.extend({
+var amnestyApp.Views.HelloWorld = Backbone.Marionette.View.extend({
   el: '#app',
   template: '#hello',
 
@@ -10,7 +10,7 @@ var HelloWorld = Backbone.Marionette.View.extend({
 
    login: function () {
       console.log ("log in button fired");
-      var amnestyUser = new Person();
+      var amnestyUser = new amnestyApp.Models.Person();
       amnestyUser.login();
     }
 });

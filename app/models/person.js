@@ -1,4 +1,4 @@
-var Person = Backbone.Model.extend({
+amnestyApp.Models.Person = Backbone.Model.extend({
     defaults: {
       facebookID: null,
       name: null,
