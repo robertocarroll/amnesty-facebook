@@ -4,6 +4,10 @@ var HelloWorld = Backbone.Marionette.View.extend({
 
   templateContext: _.pick(textStrings, "_1NOMINATE", "_1NOMINATE_DESC", "_1NOMINATE_CALL", "_1NOMINATE_BTN", "_1NOMINATE_LOADING"),
 
+  regions: {
+    facebookCallRegion: '#loadFacebook'
+  },
+
   events: {
       'click .btn-login': 'login'
     },
