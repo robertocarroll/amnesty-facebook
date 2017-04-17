@@ -3,6 +3,10 @@ var HelloBtn = Backbone.Marionette.View.extend({
 
   templateContext: _.pick(textStrings, "_1NOMINATE_BTN"),
 
+  onRender: function() {
+   console.log ("hello btn view rendered");
+  },
+
   events: {
       'click .btn-login': 'login'
     },
