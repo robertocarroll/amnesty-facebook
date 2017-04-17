@@ -2,9 +2,9 @@ var App = Backbone.Marionette.Application.extend({
   region: '#app',
 
   onStart: function() {
-    var hello = new HelloWorld();
-    hello.render();
-    this.showView(hello);
+    amnestyApp.Views.hello = new HelloWorld();
+    amnestyApp.Views.hello.render();
+    this.showView(amnestyApp.Views.hello);
   },
 
   onFacebookLogin: function (response) {
@@ -63,4 +63,5 @@ var App = Backbone.Marionette.Application.extend({
 });
 
 var amnestyApp = new App();
+amnestyApp.Views = {};
 amnestyApp.start();
