@@ -2,7 +2,7 @@ var App = Backbone.Marionette.Application.extend({
   region: '#app',
 
   onStart: function() {
-    var hello = new amnestyApp.Views.HelloWorld();
+    var hello = new HelloWorld();
     hello.render();
     this.showView(hello);
   },
@@ -25,11 +25,11 @@ var App = Backbone.Marionette.Application.extend({
       //check the contents of the API call
       // console.log ("facebook API " + JSON.stringify(response.data));
       //new collection with response
-      var list = new amnestyApp.Collections.Friends (response.data);
+      var list = new Friends (response.data);
       // console.log ("collection is " + list.length);
 
       //new view with collection
-      var myFriends = new amnestyApp.Views.FriendsView ({
+      var myFriends = new FriendsView ({
         collection: list
       });
 

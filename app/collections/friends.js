@@ -1,3 +1,3 @@
-amnestyApp.Collections.Friends = Backbone.Collection.extend({
-  model: amnestyApp.Models.Friend
+var Friends = Backbone.Collection.extend({
+  model: Friend
 });
