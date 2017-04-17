@@ -16,6 +16,7 @@
     });
     FB.AppEvents.logPageView();
     amnestyApp.Views.hello.showChildView('facebookCallRegion', new HelloBtn());
+    console.log ("Facebook loaded");
   };
 
 
