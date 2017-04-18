@@ -11,10 +11,6 @@ h1, h2, h3, h4, h5, h6, .amnesty-font  {
   font-family: "AmnestyTradeGothicW04BdCnNo-20", HelveticaNeue-CondensedBold, "Franklin Gothic Medium", sans-serif;
 }
 
-.app-container {
-  height: 100vh;
-}
-
 .amnesty-yellow {
   color: #ffff00;
 }
