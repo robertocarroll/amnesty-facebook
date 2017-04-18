@@ -15,7 +15,7 @@
     },
     "_1NOMINATE_CALL" : {
       "en":"Log in to nominate them now.",
-      "es":"ES_Loading Facebook"
+      "es":"ES_Log in to nominate them now."
     },
     "_1NOMINATE_ERROR" : {
       "en":"We can't access Facebook right now",
