@@ -9,17 +9,8 @@ var HelloWorld = Backbone.Marionette.View.extend({
       el: '#loadedFacebook',
       replaceElement: true
     }
-  },
+  }
 
-  events: {
-      'click .btn-login': 'login'
-    },
-
-   login: function () {
-      console.log ("log in button fired");
-      var amnestyUser = new Person();
-      amnestyUser.login();
-    }
 });
 
 
