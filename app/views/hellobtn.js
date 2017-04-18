@@ -1,7 +1,7 @@
 var HelloBtn = Backbone.Marionette.View.extend({
   template: '#hellobtn',
 
-  templateContext: _.pick(textStrings, "_1NOMINATE_BTN"),
+  templateContext: dictionary.pick("_1NOMINATE_BTN"),
 
   onRender: function() {
    console.log ("hello btn view rendered");

@@ -2,7 +2,7 @@ var HelloWorld = Backbone.Marionette.View.extend({
   el: '#app',
   template: '#hello',
 
-  templateContext: _.pick(textStrings, "_1NOMINATE", "_1NOMINATE_DESC", "_1NOMINATE_CALL", "_1NOMINATE_BTN", "_1NOMINATE_LOADING"),
+  templateContext: dictionary.pick("_1NOMINATE", "_1NOMINATE_DESC", "_1NOMINATE_CALL", "_1NOMINATE_BTN", "_1NOMINATE_LOADING"),
 
   regions: {
     facebookCallRegion: {
