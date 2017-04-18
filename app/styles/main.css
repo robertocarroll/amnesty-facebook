@@ -19,11 +19,11 @@ h1, h2, h3, h4, h5, h6, .amnesty-font  {
   background-color: #ffff00;
 }
 
-.bg-amnesty-yellow:hover {
+.hover-bg-amnesty-yellow:hover {
   background-color: #ffff00;
 }
 
-.bg-amnesty-yellow:focus {
+.hover-bg-amnesty-yellow:focus {
   background-color: #ffff00;
 }
 
