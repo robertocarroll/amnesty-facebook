@@ -27,16 +27,8 @@ h1, h2, h3, h4, h5, h6, .amnesty-font  {
   background-color: #ffff00;
 }
 
-.friendsWrapper {
-  position: relative;
-  min-height: 55rem;
-}
-
 .friendsContainer {
-  position: absolute;
-  height: 50%;
-  top: 0;
-  left: 0;
+  height: 60vh;
   overflow-y: auto;
   width: 100%;
 }
