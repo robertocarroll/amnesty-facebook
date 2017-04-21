@@ -16,7 +16,7 @@ var App = Backbone.Marionette.Application.extend({
       document.getElementsByTagName('html')[0].setAttribute("lang", dictionary.getLang());
     }
   },
-  
+
   onFacebookLogin: function (response) {
   //  console.log("Logged in to Facebook!");
    // console.log(response);
