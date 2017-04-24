@@ -1,3 +1,3 @@
-var Friends = Backbone.Collection.extend({
+var Friends = Backbone.PageableCollection.extend({
   model: Friend
 });
