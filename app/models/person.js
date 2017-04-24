@@ -12,7 +12,7 @@ var Person = Backbone.Model.extend({
 
       FB.login(function(response) {
         if (response.status === 'connected') {
-          console.log ("logged in");
+          console.log ("access token" + response.authResponse.accessToken);
           amnestyApp.onGetFriends(response);
           self.getUserDetails();
         } else {
