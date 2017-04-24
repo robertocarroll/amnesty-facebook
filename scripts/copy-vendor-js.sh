@@ -10,3 +10,4 @@ cp node_modules/backbone.radio/build/backbone.radio.min.js app/vendor/backbone.r
 cp node_modules/backbone.radio/build/backbone.radio.min.js.map app/vendor/backbone.radio.min.js.map;
 cp node_modules/backbone.marionette/lib/backbone.marionette.min.js app/vendor/backbone.marionette.min.js;
 cp node_modules/backbone.marionette/lib/backbone.marionette.min.js.map app/vendor/backbone.marionette.min.js.map;
+cp node_modules/backbone.paginator/lib/backbone.paginator.min.js app/vendor/backbone.paginator.min.js;
