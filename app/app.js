@@ -16,18 +16,18 @@ var App = Backbone.Marionette.Application.extend({
       document.getElementsByTagName('html')[0].setAttribute("lang", dictionary.getLang());
     }
   },
-  
+
   onFacebookLogin: function (response) {
   //  console.log("Logged in to Facebook!");
    // console.log(response);
   //  console.log(response.authResponse);
 
 
-    FB.api("/me/taggable_friends", function (response) {
+ /*   FB.api("/me/taggable_friends", function (response) {
       console.log("We got taggable friends!");
       console.log(response);
       amnestyApp.onGetFriends(response);
-    });
+    });*/
   },
 
   onGetFriends: function (response) {
@@ -35,7 +35,8 @@ var App = Backbone.Marionette.Application.extend({
       //check the contents of the API call
       // console.log ("facebook API " + JSON.stringify(response.data));
       //new collection with response
-      var list = new Friends (response.data);
+      var list = new Friends ();
+      list.fetch();
       // console.log ("collection is " + list.length);
 
       //new view with collection
