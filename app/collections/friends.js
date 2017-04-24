@@ -1,3 +1,5 @@
 var Friends = Backbone.PageableCollection.extend({
-  model: Friend
+  model: Friend,
+  url: "https://graph.facebook.com/me/taggable_friends",
+  mode: "infinite"
 });
