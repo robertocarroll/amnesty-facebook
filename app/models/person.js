@@ -15,14 +15,12 @@ var Person = Backbone.Model.extend({
           console.log ("access token" + response.authResponse.accessToken);
 
           //can I do create the view here and pass the token to it which I then pass the collection?
-          /*var token = response.authResponse.accessToken;
+          var token = response.authResponse.accessToken;
 
           var myFriends = new FriendsView ({
-             collection: list
              token: token
-          });  */
+          });
 
-          amnestyApp.onGetFriends(response);
           self.getUserDetails();
         } else {
           console.log ("The person is not logged into this app or we are unable to tell.");

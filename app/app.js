@@ -17,46 +17,6 @@ var App = Backbone.Marionette.Application.extend({
     }
   },
 
-  onFacebookLogin: function (response) {
-  //  console.log("Logged in to Facebook!");
-   // console.log(response);
-  //  console.log(response.authResponse);
-
-
- /*   FB.api("/me/taggable_friends", function (response) {
-      console.log("We got taggable friends!");
-      console.log(response);
-      amnestyApp.onGetFriends(response);
-    });*/
-  },
-
-  onGetFriends: function (response) {
-
-      //check the contents of the API call
-      // console.log ("facebook API " + JSON.stringify(response.data));
-      //new collection with response
-      var token = response.authResponse.accessToken;
-      console.log ("token is: " + token);
-      var list = new Friends ({token: token});
-      list.fetch({ reset: true })
-        .then(amnestyApp.successHandler(response), amnestyApp.errorHandler(response));
-  },
-
-    successHandler: function() {
-       console.log ("Success - collection is " + response.length);
-
-      //new view with collection
-      var myFriends = new FriendsView ({
-        collection: list
-      });
-
-      myFriends.render();
-    },
-
-    failHandler: function(list) {
-
-    },
-
   postToFacebook: function(facebookPost) {
  /*     {
               "message": "This is a test message",
