@@ -4,7 +4,6 @@ var Person = Backbone.Model.extend({
       name: null,
       email: null
     },
-    initialize: function(){},
 
     login: function(){
 
