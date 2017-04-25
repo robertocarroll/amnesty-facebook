@@ -7,7 +7,7 @@ var Friends = Backbone.PageableCollection.extend({
         this.token = options.token;
     },
     url: function(){
-        return 'https://graph.facebook.com/me/v2.8/taggable_friends'+'?'+this.token;
+        return 'https://graph.facebook.com/me/taggable_friends'+'?access_token='+this.token;
     },
   mode: "infinite"
 });
