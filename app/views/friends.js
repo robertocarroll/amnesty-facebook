@@ -11,11 +11,8 @@ var FriendsView = Backbone.Marionette.View.extend({
     }
   },
 
-  //can I do the collection stuff here? But how do I pass the access token to the collection?
-
   initialize: function (attrs) {
     this.options = attrs;
-    console.log (this.options.token);
     var self = this;
     var token = this.options.token;
     this.collection = new Friends({token: token});
