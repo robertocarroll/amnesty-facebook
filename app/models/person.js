@@ -13,6 +13,15 @@ var Person = Backbone.Model.extend({
       FB.login(function(response) {
         if (response.status === 'connected') {
           console.log ("access token" + response.authResponse.accessToken);
+
+          //can I do create the view here and pass the token to it which I then pass the collection?
+          /*var token = response.authResponse.accessToken;
+
+          var myFriends = new FriendsView ({
+             collection: list
+             token: token
+          });  */
+
           amnestyApp.onGetFriends(response);
           self.getUserDetails();
         } else {
