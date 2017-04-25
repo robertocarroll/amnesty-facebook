@@ -3,6 +3,7 @@ var Friends = Backbone.PageableCollection.extend({
   //see https://developers.facebook.com/docs/graph-api/reference/user/taggable_friends
     model: Friend,
     initialize: function(options) {
+        console.log ("options in Friends collection: " + options);
         this.token = options.token;
     },
     url: function(){

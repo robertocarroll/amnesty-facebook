@@ -36,6 +36,7 @@ var App = Backbone.Marionette.Application.extend({
       // console.log ("facebook API " + JSON.stringify(response.data));
       //new collection with response
       var token = response.authResponse.accessToken;
+      console.log ("token is: " + token);
       var list = new Friends ({token: token});
       list.fetch();
      console.log ("collection is " + list.length);
