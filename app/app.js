@@ -39,8 +39,23 @@ var App = Backbone.Marionette.Application.extend({
       console.log ("token is: " + token);
       var list = new Friends ({token: token});
       list.fetch({ reset: true })
-        .then(amnestyApp.successHandler(list), amnestyApp.errorHandler(list));
+        .then(amnestyApp.successHandler(response), amnestyApp.errorHandler(response));
   },
+
+    successHandler: function() {
+       console.log ("Success - collection is " + response.length);
+
+      //new view with collection
+      var myFriends = new FriendsView ({
+        collection: list
+      });
+
+      myFriends.render();
+    },
+
+    failHandler: function(list) {
+
+    },
 
   postToFacebook: function(facebookPost) {
  /*     {
@@ -64,21 +79,6 @@ var App = Backbone.Marionette.Application.extend({
             }
           }
       );
-    },
-
-    successHandler: function(list) {
-       console.log ("Success - collection is " + list.length);
-
-      //new view with collection
-      var myFriends = new FriendsView ({
-        collection: list
-      });
-
-      myFriends.render();
-    },
-
-    failHandler: function(list) {
-
     }
 
 });
