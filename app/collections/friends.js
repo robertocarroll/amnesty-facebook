@@ -15,10 +15,11 @@ var Friends = Backbone.PageableCollection.extend({
       currentPage: null,
       offset: function () { return this.state.currentPage * this.state.pageSize; }
     },
-    parse: function(response) {
+    parseRecords: function(response) {
       return response.data;
     },
     parseLinks: function (response, xhr) {
+      console.log (response.paging);
       return response.paging;
     }
 });
