@@ -30,10 +30,15 @@ var FriendsView = Backbone.Marionette.View.extend({
   },
 
   events: {
-      'click #next': 'next'
+      'click #next': 'next',
+      'click #previous': 'previous'
     },
 
    next: function () {
-    console.log(this.collection);
+    this.collection.getNextPage();
+  },
+
+  previous: function () {
+    this.collection.getPreviousPage();
   }
 });
