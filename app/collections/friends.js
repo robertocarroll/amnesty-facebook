@@ -19,14 +19,11 @@ var Friends = Backbone.PageableCollection.extend({
       return response.data;
     },
     parseLinks: function (response, xhr) {
-      console.log (response.paging);
-      if (response.paging.previous == null){
-        console.log ("It's the first page! " + response.paging.previous);
+      if (this.state.currentPage == 0 ) {
+        console.log ("Don't show previous button");
       }
 
-      if (response.paging.next == null){
-        console.log ("It's the last page! " + response.paging.next);
-      }
+      console.log (this.state.totalPages);
 
       return response.paging;
     }
