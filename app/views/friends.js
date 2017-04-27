@@ -21,6 +21,8 @@ var FriendsView = Backbone.Marionette.View.extend({
         self.render();
       }
     });
+
+    this.currentFriendsPage = new Page();
   },
 
   onRender: function() {
@@ -36,9 +38,15 @@ var FriendsView = Backbone.Marionette.View.extend({
 
   next: function () {
     this.collection.getNextPage();
+    this.currentFriendsPage.set('currentPage', this.currentFriendsPage.get('currentPage') + 1);
+    console.log ("Show previous btn: " + this.currentFriendsPage.attributes.showPrev);
+    console.log ("Show next btn: " + this.currentFriendsPage.attributes.showNext);
   },
 
   previous: function () {
     this.collection.getPreviousPage();
+    this.currentFriendsPage.set('currentPage', this.currentFriendsPage.get('currentPage') - 1);
+    console.log ("Show previous btn: " + this.currentFriendsPage.attributes.showPrev);
+    console.log ("Show next btn: " + this.currentFriendsPage.attributes.showNext);
   }
 });

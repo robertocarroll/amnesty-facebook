@@ -1,4 +1,4 @@
-var Pages = Backbone.Model.extend({
+var Page = Backbone.Model.extend({
     defaults: {
       showPrev: false,
       showNext: true,
@@ -6,17 +6,14 @@ var Pages = Backbone.Model.extend({
       lastPage: 10
     },
 
-    showPrev: function(){
-      //
-      if (this.currentPage == 0) {
-        this.set ({"showPrev": false});
-      }
-    },
+    update: function () {
+        console.log("update to page model");
+        if (this.currentPage == 0) {
+         this.set ({"showPrev": false});
+        }
 
-    showNext: function(){
-      //
-      if (this.currentPage == this.lastPage) {
-        this.set ({"showNext": false});
-      }
+        if (this.currentPage == this.lastPage) {
+         this.set ({"showNext": false});
+        }
     }
 });
