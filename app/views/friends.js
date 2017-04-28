@@ -16,7 +16,7 @@ var FriendsView = Backbone.Marionette.View.extend({
     var self = this;
     var token = this.options.token;
     this.collection = new Friends({token: token});
-    
+
     self.options.hasNextPage = this.collection.hasNextPage();
     self.options.hasPreviousPage = this.collection.hasPreviousPage();
 
@@ -61,7 +61,7 @@ var FriendsView = Backbone.Marionette.View.extend({
       previousEl && previousEl.setAttribute('aria-hidden', 'false');
     }
     else {
-      previousEl && previousEl.setAttribute('aria-hidden', 'true'); 
+      previousEl && previousEl.setAttribute('aria-hidden', 'true');
     }
   },
 
