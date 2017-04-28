@@ -60,6 +60,14 @@
     "_4NOMINATE_BTN_2" : {
       "en":"Nominate another person",
       "es":"ES_Nominate another person"
+    },
+    "_4NOMINATE_BTN_3" : {
+      "en":"Invite your friend to our group",
+      "es":"ES_Invite your friend to our group"
+    },
+    "_4NOMINATE_LINK" : {
+      "en":"https://www.facebook.com/groups/kuyouthnetwork/",
+      "es":"https://www.facebook.com/groups/kuyouthnetwork/"
     }
   };
 
