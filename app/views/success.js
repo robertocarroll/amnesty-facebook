@@ -11,6 +11,7 @@ var Success = Backbone.Marionette.View.extend({
     onNominateAgain: function(e) {
        //how to render a cached view?
        //do we need to remove the nominated friend from the list or not?
+       amnestyApp.Views.myFriends.updatePaginationControls();
        amnestyApp.Views.myFriends.render();
        console.log ("nominate again fired");
     },

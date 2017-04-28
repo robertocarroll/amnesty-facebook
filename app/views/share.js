@@ -11,6 +11,10 @@ var Share = Backbone.Marionette.View.extend({
         e.preventDefault();
         var amnestyMessage = $("textarea").val();
         var amnestyUserID = this.model.id;
+        var amnestyUserName = this.model.name;
+        //why is this.model.name undefined?
+        console.log ("Friend model: " + JSON.stringify(this.model));
+        amnestyMessage = "I think this person is a Human Rights Defender. Here's why: \n\n" + amnestyMessage;
         var facebookPost = {
           "message": amnestyMessage,
           "tags": amnestyUserID
