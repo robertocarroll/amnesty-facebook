@@ -16,6 +16,30 @@ var Share = Backbone.Marionette.View.extend({
           "tags": amnestyUserID
         };
 
-        amnestyApp.postToFacebook(facebookPost);
+        this.postToFacebook(facebookPost);
+    },
+
+    postToFacebook: function(facebookPost) {
+ /*     {
+              "message": "This is a test message",
+              "tags": "user id of tagged friend",
+              "place": "Page ID of a location associated with this post."
+          }
+*/    console.log("posting to Facebook " + JSON.stringify(facebookPost));
+      FB.api(
+          "/me/feed",
+          "POST",
+          facebookPost,
+          function (response) {
+            if (response && !response.error) {
+              console.log ('Success - Post ID: ' + response.id);
+              var success = new Success();
+              success.render();
+            }
+            else{
+              console.log(response.error);
+            }
+          }
+      );
     }
   });

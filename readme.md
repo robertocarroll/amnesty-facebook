@@ -1,5 +1,7 @@
 Check Mark by Jamison Wieser from the Noun Project
 
-Live: 148573185670966
-Dev: 158409844687300
-npm run start -- --fappid=158409844687300
+## Dev version
+- Change the app ID:
+  - Local: 158409844687300
+  - Prod: 148573185670966
+- Go to http://localhost:8080/app/
