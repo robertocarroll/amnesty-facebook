@@ -10,10 +10,10 @@ var FriendsList = Backbone.Marionette.CollectionView.extend({
   itemSelected: function(childView) {
       var selectedModel = childView.model;
       console.log(selectedModel);
-      var share = new Share({
+      amnestyApp.Views.share = new Share({
          model: selectedModel
         }
       );
-      share.render();
+      amnestyApp.Views.share.render();
   }
 });

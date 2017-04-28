@@ -12,7 +12,7 @@ var Person = Backbone.Model.extend({
       FB.login(function(response) {
         if (response.status === 'connected') {
           var token = response.authResponse.accessToken;
-          var myFriends = new FriendsView ({
+          amnestyApp.Views.myFriends = new FriendsView ({
              token: token
           });
 
