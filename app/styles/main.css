@@ -78,3 +78,8 @@ h1, h2, h3, h4, h5, h6, .amnesty-font  {
 [aria-hidden="true"] {
   display: none;
 }
+
+#previous [aria-hidden="true"],
+#next [aria-hidden="true"] {
+  visibility: hidden;
+}
