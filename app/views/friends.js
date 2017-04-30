@@ -71,6 +71,8 @@ var FriendsView = Backbone.Marionette.View.extend({
     this.showChildView('body', new FriendsList({
       collection: this.collection
     }));
+
+    this.updatePaginationControls();
   },
 
   events: {
