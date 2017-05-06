@@ -1,6 +1,10 @@
 (function (global) {
   var defaultLang = "en";
   var strings = {
+    "_BACKGROUND" : {
+      "en": "464656512.jpg",
+      "es": "test.png"
+    },
     "_1NOMINATE" : {
       "en": "Nominate",
       "es": "ES_Nominate"

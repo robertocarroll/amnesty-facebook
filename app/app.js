@@ -13,7 +13,11 @@ var App = Backbone.Marionette.Application.extend({
 
   setLanguageFromDictionary: function (){
     if (dictionary) {
+      var backgroundImage = dictionary.pick("_BACKGROUND");
+      backgroundImage = backgroundImage["_BACKGROUND"];
+      backgroundImage = "images/" + backgroundImage;
       document.getElementsByTagName('html')[0].setAttribute("lang", dictionary.getLang());
+      document.getElementById("main").style.backgroundImage = "url(" + backgroundImage + ")";
     }
   }
 
