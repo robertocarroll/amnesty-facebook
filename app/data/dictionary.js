@@ -45,6 +45,14 @@
       "en":"Submit",
       "es":"ES_Submit"
     },
+    "_3NOMINATE_WRAPPER" : {
+      "en":" is a Human Rights Defender. Here's why: \n\n",
+      "es":" is a Human Rights Defender. Here's why ES: \n\n"
+    },
+    "_3NOMINATE_LINK" : {
+      "en":"https://www.amnesty.org/en/",
+      "es":"https://www.amnesty.org/es/"
+    },
     "_4NOMINATE" : {
       "en":"Nominated",
       "es":"ES_Nominated"
@@ -53,21 +61,9 @@
       "en":"Thanks for sharing BRAVE! Nominate another friend or tell your friends.",
       "es":"ES_Thanks for sharing BRAVE! Nominate another friend or tell your friends."
     },
-    "_4NOMINATE_BTN" : {
-      "en":"Tell your friends",
-      "es":"ES_Tell your friends"
-    },
     "_4NOMINATE_BTN_2" : {
       "en":"Nominate another person",
       "es":"ES_Nominate another person"
-    },
-    "_4NOMINATE_BTN_3" : {
-      "en":"Invite your friend to our group",
-      "es":"ES_Invite your friend to our group"
-    },
-    "_4NOMINATE_LINK" : {
-      "en":"https://www.facebook.com/groups/kuyouthnetwork/",
-      "es":"https://www.facebook.com/groups/kuyouthnetwork/"
     }
   };
 

@@ -1,7 +1,7 @@
 var Share = Backbone.Marionette.View.extend({
   el: '#app',
   template: '#share',
-  templateContext: dictionary.pick("_1NOMINATE", "_1NOMINATE_DESC", "_3NOMINATE_CALL", "_3NOMINATE_BTN_2"),
+  templateContext: dictionary.pick("_1NOMINATE", "_1NOMINATE_DESC", "_3NOMINATE_CALL", "_3NOMINATE_BTN_2", "_3NOMINATE_LINK", "_3NOMINATE_WRAPPER"),
 
   events: {
         "click .shareForm": "onSubmit"
@@ -12,12 +12,16 @@ var Share = Backbone.Marionette.View.extend({
         var amnestyMessage = $("textarea").val();
         var amnestyUserID = this.model.id;
         var amnestyUserName = this.model.attributes.name;
-        //why is this.model.name undefined?
-        console.log ("Friend model: " + JSON.stringify(this.model.attributes.name));
-        amnestyMessage = amnestyUserName + " is a Human Rights Defender. Here's why: \n\n" + amnestyMessage;
+        var amnestyLink = dictionary.pick("_3NOMINATE_LINK");
+        amnestyLink = amnestyLink["_3NOMINATE_LINK"];
+        var amnestyWrapper = dictionary.pick("_3NOMINATE_WRAPPER");
+        amnestyWrapper = amnestyWrapper["_3NOMINATE_WRAPPER"];
+
+        amnestyMessage = amnestyUserName + amnestyWrapper + amnestyMessage;
         var facebookPost = {
           "message": amnestyMessage,
-          "tags": amnestyUserID
+          "tags": amnestyUserID,
+          "link": amnestyLink
         };
 
         this.postToFacebook(facebookPost);
