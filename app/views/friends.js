@@ -46,24 +46,26 @@ var FriendsView = Backbone.Marionette.View.extend({
     });
   },
 
-  updatePaginationControls: function () {
-    var nextEl = document.getElementById('next');
-    var previousEl = document.getElementById('previous');
+  updatePaginationControls: (function () {
+    return _.debounce(function updatePaginationControls() {
+      var nextEl = document.getElementById('next');
+      var previousEl = document.getElementById('previous');
 
-    if (this.options.hasNextPage) {
-      nextEl && nextEl.setAttribute('aria-hidden', 'false');
-    }
-    else {
-      nextEl && nextEl.setAttribute('aria-hidden', 'true');
-    }
+      if (this.options.hasNextPage) {
+        nextEl && nextEl.setAttribute('aria-hidden', 'false');
+      }
+      else {
+        nextEl && nextEl.setAttribute('aria-hidden', 'true');
+      }
 
-    if (this.options.hasPreviousPage) {
-      previousEl && previousEl.setAttribute('aria-hidden', 'false');
-    }
-    else {
-      previousEl && previousEl.setAttribute('aria-hidden', 'true');
-    }
-  },
+      if (this.options.hasPreviousPage) {
+        previousEl && previousEl.setAttribute('aria-hidden', 'false');
+      }
+      else {
+        previousEl && previousEl.setAttribute('aria-hidden', 'true');
+      }
+    }, 250);
+  })(),
 
   onRender: function() {
     this.showChildView('body', new FriendsList({
