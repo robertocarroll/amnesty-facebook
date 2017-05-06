@@ -68,6 +68,10 @@
     "_4NOMINATE_BTN_2" : {
       "en":"Nominate another person",
       "es":"ES_Nominate another person"
+    },
+    "_4IFRAME" : {
+      "en":"https://www.amnesty.org/en/",
+      "es":"https://www.amnesty.org/es/"
     }
   };
 
