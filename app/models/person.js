@@ -32,7 +32,7 @@ var Person = Backbone.Model.extend({
             "facebookID": response.id,
             "name": response.name,
             "email": response.email,
-            "location": response.location.name
+            "location": (response && response.location && response.location.name || "")
           });
           console.log (self.attributes);
       });
