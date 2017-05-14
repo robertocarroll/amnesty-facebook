@@ -1,5 +1,4 @@
 var Share = Backbone.Marionette.View.extend({
-  el: '#app',
   template: '#share',
   templateContext: dictionary.pick("_1NOMINATE", "_1NOMINATE_DESC", "_3NOMINATE_CALL", "_3NOMINATE_BTN_2", "_3NOMINATE_LINK", "_3NOMINATE_WRAPPER"),
 
@@ -41,8 +40,9 @@ var Share = Backbone.Marionette.View.extend({
           function (response) {
             if (response && !response.error) {
               console.log ('Success - Post ID: ' + response.id);
-              var success = new Success();
-              success.render();
+              amnestyApp.Views.success = new Success();
+              amnestyApp.mainRegion.empty();
+              amnestyApp.mainRegion.show (amnestyApp.Views.success);
             }
             else{
               console.log(response.error);
