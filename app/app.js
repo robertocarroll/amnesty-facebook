@@ -6,9 +6,9 @@ var App = Backbone.Marionette.Application.extend({
   },
 
   onStart: function() {
+    amnestyApp.mainRegion = this.getRegion();
     amnestyApp.Views.hello = new HelloWorld();
-    amnestyApp.Views.hello.render();
-    this.showView(amnestyApp.Views.hello);
+    amnestyApp.mainRegion.show(amnestyApp.Views.hello);
   },
 
   setLanguageFromDictionary: function (){

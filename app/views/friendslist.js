@@ -14,6 +14,7 @@ var FriendsList = Backbone.Marionette.CollectionView.extend({
          model: selectedModel
         }
       );
-      amnestyApp.Views.share.render();
+      amnestyApp.mainRegion.empty();
+      amnestyApp.mainRegion.show (amnestyApp.Views.share);
   }
 });
