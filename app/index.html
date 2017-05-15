@@ -29,7 +29,7 @@
 
     <script id="hellobtn" type="text/x-underscore-template" >
       <a class="btn-login amnesty-font f4 link dim ph5 pv3 mb2 dib ttu black bg-amnesty-yellow">
-        <span class="sk-fading-circle" id="spinner">
+        <div class="sk-fading-circle" id="spinner">
           <div class="sk-circle1 sk-circle"></div>
           <div class="sk-circle2 sk-circle"></div>
           <div class="sk-circle3 sk-circle"></div>
@@ -42,7 +42,7 @@
           <div class="sk-circle10 sk-circle"></div>
           <div class="sk-circle11 sk-circle"></div>
           <div class="sk-circle12 sk-circle"></div>
-        </span>
+        </div>
 
         <span id="facebookBtnText">
           <%- _1NOMINATE_BTN %></a>
@@ -85,6 +85,11 @@
             </svg>
           </a>
         </div>
+    </script>
+
+    <script id="friendsNone" type="text/x-underscore-template" >
+        <p class="pb4-ns"><%- _2NOMINATE_NONE %></p>
+
     </script>
 
     <script id="share" type="text/x-underscore-template" >
@@ -139,6 +144,7 @@
       <script src="./collections/friends.js"></script>
       <script src="./views/hellobtn.js"></script>
       <script src="./views/hello.js"></script>
+      <script src="./views/friendsnone.js"></script>
       <script src="./views/friendslistitem.js"></script>
       <script src="./views/friendslist.js"></script>
       <script src="./views/friends.js"></script>

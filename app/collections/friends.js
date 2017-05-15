@@ -20,6 +20,10 @@ var Friends = Backbone.PageableCollection.extend({
     },
     parseLinks: function (response, xhr) {
 
+      if (!response.paging) {
+        return false;
+      }
+
       if (response.paging.next == null ) {
         // set the lastPage in the page model
         //this.model.set('lastPage', this.state.currentPage);
