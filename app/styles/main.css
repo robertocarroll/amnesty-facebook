@@ -106,13 +106,12 @@ h1, h2, h3, h4, h5, h6, .amnesty-font  {
   display: block;
 }
 
-.btn-login.is-loading {
-  .label {
-    display: none;
-  }
-  .spinner {
-    opacity: 1;
-  }
+.btn-login.is-loading .label {
+  display: none;
+}
+
+.btn-login.is-loading .spinner {
+  opacity: 1;
 }
 
 .sk-fading-circle {
