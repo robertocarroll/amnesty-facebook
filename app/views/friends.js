@@ -40,8 +40,13 @@ var FriendsView = Backbone.Marionette.View.extend({
     });
     this.collection.fetch({
       success: function () {
-        self.render();
-        self.updatePaginationControls();
+        if (collection.length === 0) {
+          amnestyApp.Views.friends.showChildView('body', new FriendsNone());
+        }
+        else {
+          self.render();
+          self.updatePaginationControls();
+        }
       }
     });
   },
