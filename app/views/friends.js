@@ -39,9 +39,15 @@ var FriendsView = Backbone.Marionette.View.extend({
       }
     });
     this.collection.fetch({
-      success: function () {
-        self.render();
-        self.updatePaginationControls();
+      success: function (collection) {
+
+        if (collection.length === 0) {
+          // TODO: render a view for users with no Facebook friends here, I guess.
+        }
+        else {
+          self.render();
+          self.updatePaginationControls();
+        }
       }
     });
   },
