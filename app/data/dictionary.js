@@ -2,7 +2,7 @@
   var defaultLang = "en";
   var strings = {
     "_BACKGROUND" : {
-      "en": "464656512.jpg",
+      "en": "464656512-web.jpg",
       "es": "test.png"
     },
     "_1NOMINATE" : {
