@@ -12,6 +12,7 @@ var HelloBtn = Backbone.Marionette.View.extend({
       var isEnabled = !button.disabled;
 
       if (isEnabled) {
+        console.log ("btn enabled");
         button.disabled = true;
         button.classList.toggle('is-loading');
       }
