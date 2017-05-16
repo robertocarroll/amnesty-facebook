@@ -29,7 +29,7 @@
 
     <script id="hellobtn" type="text/x-underscore-template" >
       <a class="btn-login amnesty-font f4 link dim ph5 pv3 mb2 dib ttu black bg-amnesty-yellow">
-        <div class="sk-fading-circle" id="spinner">
+        <div class="sk-fading-circle spinner">
           <div class="sk-circle1 sk-circle"></div>
           <div class="sk-circle2 sk-circle"></div>
           <div class="sk-circle3 sk-circle"></div>
@@ -44,7 +44,7 @@
           <div class="sk-circle12 sk-circle"></div>
         </div>
 
-        <span id="facebookBtnText">
+        <span class="label" id="facebookBtnText">
           <%- _1NOMINATE_BTN %></a>
         </span>
     </script>
@@ -69,7 +69,7 @@
           <div class="friendsWrapper">
             <div class="friendsContainer"></div>
           </div>
-          <div class="flex items-center justify-center pa4">
+          <div class="flex items-center justify-center pa4" id="next-previous">
           <a href="#0" id="previous" class="f4 no-underline white bg-animate hover-bg-amnesty-yellow hover-black inline-flex items-center pa3 ba border-box">
               <svg class="w1" data-icon="chevronLeft" viewBox="0 0 32 32" style="fill:currentcolor">
                 <title>chevronLeft icon</title>
@@ -88,8 +88,13 @@
     </script>
 
     <script id="friendsNone" type="text/x-underscore-template" >
-        <p class="pb4-ns"><%- _2NOMINATE_NONE %></p>
-
+      <div class="flex items-center justify-center pa4 bg-black white">
+      <svg class="w1" data-icon="info" viewBox="0 0 32 32" style="fill:currentcolor">
+        <title>info icon</title>
+        <path d="M16 0 A16 16 0 0 1 16 32 A16 16 0 0 1 16 0 M19 15 L13 15 L13 26 L19 26 z M16 6 A3 3 0 0 0 16 12 A3 3 0 0 0 16 6"></path>
+      </svg>
+      <span class="lh-title ml3"><%- _2NOMINATE_NONE %></span>
+    </div>
     </script>
 
     <script id="share" type="text/x-underscore-template" >

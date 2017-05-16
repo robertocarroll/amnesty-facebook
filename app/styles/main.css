@@ -75,6 +75,7 @@ h1, h2, h3, h4, h5, h6, .amnesty-font  {
   transform: scaleX(1);
 }
 
+#next-previous[aria-hidden="true"],
 #previous[aria-hidden="true"],
 #next[aria-hidden="true"] {
   visibility: hidden;
@@ -96,11 +97,27 @@ h1, h2, h3, h4, h5, h6, .amnesty-font  {
 }
 
 
+.btn-login .spinner {
+  opacity: 0;
+  transition: opacity .2s ease-out;
+}
 
+.btn-login .label {
+  display: block;
+}
+
+.btn-login.is-loading {
+  .label {
+    display: none;
+  }
+  .spinner {
+    opacity: 1;
+  }
+}
 
 .sk-fading-circle {
-  width: 40px;
-  height: 40px;
+  width: 2rem;
+  height: 2rem;
   position: relative;
 }
 

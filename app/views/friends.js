@@ -39,9 +39,14 @@ var FriendsView = Backbone.Marionette.View.extend({
       }
     });
     this.collection.fetch({
-      success: function () {
+      success: function (collection) {
+      // the length shows max 25 due to pagination but that's OK
+      // because we are just checking they have friends
         if (collection.length === 0) {
-          amnestyApp.Views.friends.showChildView('body', new FriendsNone());
+          self.render();
+          var nextpreviousEl = document.getElementById('next-previous');
+          nextpreviousEl.setAttribute('aria-hidden', 'true');
+          amnestyApp.Views.myFriends.showChildView('body', new FriendsNone());
         }
         else {
           self.render();

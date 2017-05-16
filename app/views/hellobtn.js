@@ -7,7 +7,15 @@ var HelloBtn = Backbone.Marionette.View.extend({
       'click .btn-login': 'login'
     },
 
-   login: function () {
+   login: function (ev) {
+      var button = ev.currentTarget;
+      var isEnabled = !button.disabled;
+
+      if (isEnabled) {
+        button.disabled = true;
+        button.classList.toggle('is-loading');
+      }
+
       var amnestyUser = new Person();
       amnestyUser.login();
     }
