@@ -99,6 +99,7 @@ h1, h2, h3, h4, h5, h6, .amnesty-font  {
 
 
 .btn-login .spinner {
+  display: none;
   opacity: 0;
   transition: opacity .2s ease-out;
 }
@@ -112,6 +113,7 @@ h1, h2, h3, h4, h5, h6, .amnesty-font  {
 }
 
 .btn-login.is-loading .spinner {
+  display: block;
   opacity: 1;
 }
 
@@ -140,6 +142,7 @@ h1, h2, h3, h4, h5, h6, .amnesty-font  {
   -webkit-animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
           animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
 }
+
 .sk-fading-circle .sk-circle2 {
   -webkit-transform: rotate(30deg);
       -ms-transform: rotate(30deg);
