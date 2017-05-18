@@ -2,7 +2,7 @@
   var defaultLang = "en";
   var strings = {
     "_BACKGROUND" : {
-      "en": "464656512.jpg",
+      "en": "464656512-web.jpg",
       "es": "test.png"
     },
     "_1NOMINATE" : {
@@ -36,6 +36,10 @@
     "_2NOMINATE_CALL" : {
       "en":"Select your BRAVE Facebook friend",
       "es":"ES_Select your BRAVE Facebook friend"
+    },
+    "_2NOMINATE_NONE" : {
+      "en":"You don't seem to have any Facebook friends",
+      "es":"ES_You don't seem to have any Facebook friends"
     },
     "_3NOMINATE_CALL" : {
       "en":"Share why you think they're BRAVE",
