@@ -10,10 +10,14 @@ var Person = Backbone.Model.extend({
 
     login: function(){
       var self = this;
+      //set the login to null so that the response always triggers a change in the model
+      var loggedIn = self.get('loggedIn');
+      if(loggedIn) {
+        self.set ('loggedIn', 'null');
+      }
 
       FB.login(function(response) {
         if (response.status === 'connected') {
-
           var token = response.authResponse.accessToken;
           self.set ('token', token);
           self.set ('loggedIn', 'true');

@@ -19,7 +19,8 @@ var HelloWorld = Backbone.Marionette.View.extend({
 
   handleLogin() {
     var loggedInStatus = this.model.get('loggedIn');
-    if (loggedInStatus) {
+
+    if (loggedInStatus == "true") {
       this.getFriends();
     }
 
