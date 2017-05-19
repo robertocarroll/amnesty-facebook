@@ -130,7 +130,10 @@
     <script id="share" type="text/x-underscore-template" >
           <h1 class="ttu f1 f-headline-l mb1"><%- _1NOMINATE %></h1>
           <p class="pb4-ns"><%- _1NOMINATE_DESC %></p>
-          <p><%- _3NOMINATE_CALL %></p>
+          <div id="errorShare">
+            <p><%- _3NOMINATE_CALL %></p>
+          </div>
+
           <form class="pa4 black-80 pb0" id="shareForm">
             <div>
               <textarea id="comment" name="comment" class="db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2" spellcheck="true" rows="8"></textarea>
@@ -147,19 +150,24 @@
           <a class="shareForm amnesty-font f4 link dim ph5 pv3 pt3 mb2 dib ttu black bg-amnesty-yellow pointer"><%- _3NOMINATE_BTN_2 %></a>
     </script>
 
+    <script id="shareerror" type="text/x-underscore-template" >
+      <p class="pb4-ns"><%- _3NOMINATE_ERROR %></p>
+      <p class="pb4-ns"><%- errorMessage %></p>
+    </script>
+
     <script id="success" type="text/x-underscore-template" >
-          <h1 class="ttu f1 f-headline-l mb1"><%- _4NOMINATE %></h1>
+      <h1 class="ttu f1 f-headline-l mb1"><%- _4NOMINATE %></h1>
 
-          <img class="pv3-ns" src="images/tick.svg">
+      <img class="pv3-ns" src="images/tick.svg">
 
-          <p class="pb4-ns"><%- _4NOMINATE_DESC %></p>
+      <p class="pb4-ns"><%- _4NOMINATE_DESC %></p>
 
-          <p><a class="nominateAgain amnesty-font f4 link dim ph5 pv3 mb2 dib ttu black bg-amnesty-yellow pointer"><%- _4NOMINATE_BTN_2 %></a></p>
+      <p><a class="nominateAgain amnesty-font f4 link dim ph5 pv3 mb2 dib ttu black bg-amnesty-yellow pointer"><%- _4NOMINATE_BTN_2 %></a></p>
 
-          <div class="iframeContainer">
-           <iframe src="<%- _4IFRAME %>"
-          frameborder="0" allowfullscreen class="iframeInner" scrolling="no"></iframe>
-          </div>
+      <div class="iframeContainer">
+       <iframe src="<%- _4IFRAME %>"
+      frameborder="0" allowfullscreen class="iframeInner" scrolling="no"></iframe>
+      </div>
 
     </script>
 
@@ -185,6 +193,7 @@
       <script src="./views/friendslistitem.js"></script>
       <script src="./views/friendslist.js"></script>
       <script src="./views/friends.js"></script>
+      <script src="./views/shareerror.js"></script>
       <script src="./views/share.js"></script>
       <script src="./views/success.js"></script>
       <script src="./app.js"></script>

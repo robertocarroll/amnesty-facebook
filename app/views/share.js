@@ -2,9 +2,16 @@ var Share = Backbone.Marionette.View.extend({
   template: '#share',
   templateContext: dictionary.pick("_1NOMINATE", "_1NOMINATE_DESC", "_3NOMINATE_CALL", "_3NOMINATE_BTN_2", "_3NOMINATE_LINK", "_3NOMINATE_WRAPPER"),
 
+  regions: {
+    shareErrorRegion: {
+      el: '#errorShare',
+      replaceElement: true
+    }
+  },
+
   events: {
         "click .shareForm": "onSubmit"
-    },
+  },
 
     onSubmit: function(e) {
         e.preventDefault();
@@ -45,7 +52,18 @@ var Share = Backbone.Marionette.View.extend({
               amnestyApp.mainRegion.show (amnestyApp.Views.success);
             }
             else{
+              // show an error message
+              // show them the actual error
               console.log(response.error);
+
+              //let them try again
+
+              //put the message in the text field
+              if ($('#comment').is(':empty')) {
+                  $('#comment').val(amnestyMessage);
+              }
+
+
             }
           }
       );

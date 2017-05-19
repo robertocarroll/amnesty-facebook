@@ -10,7 +10,12 @@ var Person = Backbone.Model.extend({
 
     login: function(){
       var self = this;
-      //set the login to null so that the response always triggers a change in the model
+      /* test if the loggedIn is not null
+      if it's not null set the login to null
+      so that the response always triggers a change in the model
+      e.g. if the user repeatedly tries to log in
+      */
+
       var loggedIn = self.get('loggedIn');
       if(loggedIn) {
         self.set ('loggedIn', 'null');
