@@ -7,7 +7,11 @@ var App = Backbone.Marionette.Application.extend({
 
   onStart: function() {
     amnestyApp.mainRegion = this.getRegion();
-    amnestyApp.Views.hello = new HelloWorld();
+    amnestyApp.Models.amnestyUser = new Person();
+
+    amnestyApp.Views.hello = new HelloWorld({
+      model: amnestyApp.Models.amnestyUser
+    });
     amnestyApp.mainRegion.show(amnestyApp.Views.hello);
   },
 
@@ -25,4 +29,5 @@ var App = Backbone.Marionette.Application.extend({
 
 var amnestyApp = new App();
 amnestyApp.Views = {};
+amnestyApp.Models = {};
 amnestyApp.start();

@@ -12,13 +12,12 @@ var HelloBtn = Backbone.Marionette.View.extend({
       var isEnabled = !button.disabled;
 
       if (isEnabled) {
-        console.log ("btn enabled");
         button.disabled = true;
         button.classList.toggle('is-loading');
         console.log (button.classList);
       }
 
-      var amnestyUser = new Person();
-      amnestyUser.login();
+      //when the button is clicked, set off the login to Facebook in the person model
+      amnestyApp.Models.amnestyUser.login();
     }
 });

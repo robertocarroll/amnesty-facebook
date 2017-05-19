@@ -7,6 +7,32 @@ var HelloWorld = Backbone.Marionette.View.extend({
       el: '#loadedFacebook',
       replaceElement: true
     }
+  },
+
+  modelEvents: {
+    'change:loggedIn': 'handleLogin'
+  },
+
+  handleLogin() {
+    var loggedInStatus = this.model.get('loggedIn');
+    if (loggedInStatus) {
+      this.getFriends();
+    }
+
+    else {
+      this.loginFailed();
+    }
+  },
+
+  getFriends() {
+    var token = this.model.get('token');
+    amnestyApp.Views.myFriends = new FriendsView ({
+       token: token
+    });
+  },
+
+  loginFailed() {
+
   }
 });
 

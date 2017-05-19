@@ -3,23 +3,25 @@ var Person = Backbone.Model.extend({
       facebookID: null,
       name: null,
       email: null,
-      location: null
+      location: null,
+      loggedIn: null,
+      token: null
     },
 
     login: function(){
-
       var self = this;
 
       FB.login(function(response) {
         if (response.status === 'connected') {
-          var token = response.authResponse.accessToken;
-          amnestyApp.Views.myFriends = new FriendsView ({
-             token: token
-          });
 
+          var token = response.authResponse.accessToken;
+          self.set ('token', token);
+          self.set ('loggedIn', 'true');
           self.getUserDetails();
-        } else {
-          console.log ("The person is not logged into this app or we are unable to tell.");
+        }
+
+        else {
+          self.set ('loggedIn', 'false');
         }
       }, {scope:'public_profile,email,user_friends,publish_actions,user_location', return_scopes:true});
     },
@@ -36,7 +38,5 @@ var Person = Backbone.Model.extend({
           });
           console.log (self.attributes);
       });
-
     }
-
 });
