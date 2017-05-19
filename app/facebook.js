@@ -8,14 +8,14 @@
 
   window.fbAsyncInit = function() {
     FB.init({
-      appId       : '158409844687300',
+      appId       : '148573185670966',
       status      : true, // check login status
       cookies     : true, // enable cookies to allow server to access session,
       xfbml       : true,
       version     : 'v2.8'
     });
     FB.AppEvents.logPageView();
-    // amnestyApp.Views.hello.showChildView('facebookCallRegion', new HelloBtn());
+    amnestyApp.Views.hello.showChildView('facebookCallRegion', new HelloBtn());
     console.log ("Facebook loaded");
   };
 
