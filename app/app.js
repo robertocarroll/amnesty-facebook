@@ -2,11 +2,7 @@ var App = Backbone.Marionette.Application.extend({
   region: '#app',
 
   onBeforeStart: function () {
-    $.getJSON("data/dictionary.json", function(json) {
-        amnestyApp.start();
-        this.setLanguageFromDictionary();
-        console.log(json); // this will show the info it in firebug console
-    });
+    this.setLanguageFromDictionary();
   },
 
   onStart: function() {
@@ -29,4 +25,13 @@ var App = Backbone.Marionette.Application.extend({
 
 var amnestyApp = new App();
 amnestyApp.Views = {};
+
+$(document).ready(function(){
+  $.getJSON("data/dictionary.json", function(json) {
+    strings = json;
+    amnestyApp.start();
+  });
+});
+
+
 
