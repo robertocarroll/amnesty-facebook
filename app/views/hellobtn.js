@@ -14,7 +14,6 @@ var HelloBtn = Backbone.Marionette.View.extend({
       if (isEnabled) {
         button.disabled = true;
         button.classList.toggle('is-loading');
-        console.log (button.classList);
       }
 
       //when the button is clicked, set off the login to Facebook in the person model

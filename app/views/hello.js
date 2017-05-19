@@ -6,6 +6,10 @@ var HelloWorld = Backbone.Marionette.View.extend({
     facebookCallRegion: {
       el: '#loadedFacebook',
       replaceElement: true
+    },
+    facebookErrorRegion: {
+      el: '#errorFacebook',
+      replaceElement: true
     }
   },
 
@@ -32,7 +36,11 @@ var HelloWorld = Backbone.Marionette.View.extend({
   },
 
   loginFailed() {
+    //show error message
+    amnestyApp.Views.hello.showChildView('facebookErrorRegion', new HelloError());
 
+    //show button to try again
+    amnestyApp.Views.hello.showChildView('facebookCallRegion', new HelloBtn());
   }
 });
 

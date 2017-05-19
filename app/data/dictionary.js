@@ -22,8 +22,8 @@
       "es":"ES_Log in to nominate them now."
     },
     "_1NOMINATE_ERROR" : {
-      "en":"We can't access Facebook right now",
-      "es":"ES_We can't access Facebook right now"
+      "en":"We can't seem to access Facebook right now. Please try again.",
+      "es":"ES_We can't seem to access Facebook right now. Please try again."
     },
     "_1NOMINATE_BTN" : {
       "en":"Nominate with Facebook",
