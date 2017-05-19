@@ -41,6 +41,10 @@
       "en":"You don't seem to have any Facebook friends",
       "es":"ES_You don't seem to have any Facebook friends"
     },
+    "_2NOMINATE_ERROR" : {
+      "en":"Something went wrong. Please try again",
+      "es":"ES_Something went wrong. Please try again"
+    },
     "_3NOMINATE_CALL" : {
       "en":"Share why you think they're BRAVE",
       "es":"ES_Share why you think they're BRAVE"
