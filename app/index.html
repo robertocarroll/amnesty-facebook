@@ -122,15 +122,31 @@
               <textarea id="comment" name="comment" class="db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2" spellcheck="true" rows="8"></textarea>
             </div>
           </form>
-          <div class="friendWrapper ml4 mr4 mb4 bg-white-80">
-            <div class="dtc w2 w3-ns v-mid">
-              <img src="<%- picture.data.url %>" class="ba b--black-10 db br2 w2 w3-ns h2 h3-ns"/>
+            <div class="friendWrapper ml4 mr4 mb4 bg-white-80">
+              <div class="dtc w2 w3-ns v-mid">
+                <img src="<%- picture.data.url %>" class="ba b--black-10 db br2 w2 w3-ns h2 h3-ns"/>
+              </div>
+              <div class="dtc v-mid pl3 tl-ns pl4">
+                <h1 class="f4 f3-ns fw6 lh-title black mv0"><%- name %></h1>
+              </div>
             </div>
-            <div class="dtc v-mid pl3 tl-ns pl4">
-              <h1 class="f4 f3-ns fw6 lh-title black mv0"><%- name %></h1>
+          <a class="shareForm amnesty-font f4 link dim ph5 pv3 pt3 mb2 dib ttu black bg-amnesty-yellow pointer relative">
+            <div class="sk-fading-circle spinner">
+              <div class="sk-circle1 sk-circle"></div>
+              <div class="sk-circle2 sk-circle"></div>
+              <div class="sk-circle3 sk-circle"></div>
+              <div class="sk-circle4 sk-circle"></div>
+              <div class="sk-circle5 sk-circle"></div>
+              <div class="sk-circle6 sk-circle"></div>
+              <div class="sk-circle7 sk-circle"></div>
+              <div class="sk-circle8 sk-circle"></div>
+              <div class="sk-circle9 sk-circle"></div>
+              <div class="sk-circle10 sk-circle"></div>
+              <div class="sk-circle11 sk-circle"></div>
+              <div class="sk-circle12 sk-circle"></div>
             </div>
-          </div>
-          <a class="shareForm amnesty-font f4 link dim ph5 pv3 pt3 mb2 dib ttu black bg-amnesty-yellow pointer"><%- _3NOMINATE_BTN_2 %></a>
+            <%- _3NOMINATE_BTN_2 %>
+          </a>
     </script>
 
     <script id="success" type="text/x-underscore-template" >
@@ -140,7 +156,23 @@
 
           <p class="pb4-ns"><%- _4NOMINATE_DESC %></p>
 
-          <p><a class="nominateAgain amnesty-font f4 link dim ph5 pv3 mb2 dib ttu black bg-amnesty-yellow pointer"><%- _4NOMINATE_BTN_2 %></a></p>
+          <p><a class="nominateAgain amnesty-font f4 link dim ph5 pv3 mb2 dib ttu black bg-amnesty-yellow pointer relative">
+            <div class="sk-fading-circle spinner">
+              <div class="sk-circle1 sk-circle"></div>
+              <div class="sk-circle2 sk-circle"></div>
+              <div class="sk-circle3 sk-circle"></div>
+              <div class="sk-circle4 sk-circle"></div>
+              <div class="sk-circle5 sk-circle"></div>
+              <div class="sk-circle6 sk-circle"></div>
+              <div class="sk-circle7 sk-circle"></div>
+              <div class="sk-circle8 sk-circle"></div>
+              <div class="sk-circle9 sk-circle"></div>
+              <div class="sk-circle10 sk-circle"></div>
+              <div class="sk-circle11 sk-circle"></div>
+              <div class="sk-circle12 sk-circle"></div>
+            </div>
+          <%- _4NOMINATE_BTN_2 %></a>
+          </p>
 
           <div class="iframeContainer">
            <iframe src="<%- _4IFRAME %>"

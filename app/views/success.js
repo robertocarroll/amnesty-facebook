@@ -7,6 +7,14 @@ var Success = Backbone.Marionette.View.extend({
     },
 
     onNominateAgain: function(e) {
+      var button = e.currentTarget;
+      var isEnabled = !button.disabled;
+
+      if (isEnabled) {
+        button.disabled = true;
+        button.classList.toggle('is-loading');
+      }
+
        amnestyApp.Views.myFriends.render();
     }
 });
