@@ -98,23 +98,27 @@ h1, h2, h3, h4, h5, h6, .amnesty-font  {
 }
 
 
-.btn-login .spinner {
-  display: none;
+a .spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity .2s ease-out;
 }
 
-.btn-login .label {
-  display: block;
-}
-
-.btn-login.is-loading .label {
-  display: none;
-}
-
-.btn-login.is-loading .spinner {
-  display: block;
+a.is-loading .spinner {
   opacity: 1;
+}
+
+a .button-label {
+  opacity: 1;
+}
+
+a.is-loading .button-label {
+  opacity: 0;
 }
 
 .sk-fading-circle {
