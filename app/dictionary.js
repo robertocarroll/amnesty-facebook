@@ -67,8 +67,6 @@
 
             strings = json;
             setLang(getLangFromQueryString() || defaultLang);
-
-            console.log("Strings loaded!");
           }
           // TODO: handle errors
         });
