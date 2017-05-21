@@ -1881,8 +1881,10 @@ code, .code { font-family: Consolas, monaco, monospace; }
 
 */
 .dim { opacity: 1; -webkit-transition: opacity .15s ease-in; transition: opacity .15s ease-in; }
-.dim:hover, .dim:focus { -webkit-backface-visibility: hidden; backface-visibility: hidden; opacity: .5; -webkit-transition: opacity .15s ease-in; transition: opacity .15s ease-in; }
+@media(hover) {
+.dim:hover, .dim:focus { -webkit-backface-visibility: hidden; backface-visibility: hidden; opacity: .2; -webkit-transition: opacity .15s ease-in; transition: opacity .15s ease-in; }
 .dim:active { -webkit-backface-visibility: hidden; backface-visibility: hidden; opacity: .8; -webkit-transition: opacity .15s ease-out; transition: opacity .15s ease-out; }
+}
 /*
 
   Animate opacity to 100% on hover by adding the glow class.
