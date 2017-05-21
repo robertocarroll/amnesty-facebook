@@ -9,6 +9,7 @@ var App = Backbone.Marionette.Application.extend({
     amnestyApp.mainRegion = this.getRegion();
     amnestyApp.Views.hello = new HelloWorld();
     amnestyApp.mainRegion.show(amnestyApp.Views.hello);
+    amnestyApp.Views.hello.showChildView('facebookCallRegion', new HelloBtn());
   },
 
   loadFacebookApi: new Promise(function (resolve, reject) {
@@ -29,28 +30,16 @@ var App = Backbone.Marionette.Application.extend({
         version     : 'v2.8'
       });
       FB.AppEvents.logPageView();
-      amnestyApp.Views.hello.showChildView('facebookCallRegion', new HelloBtn());
-      console.log ("Facebook loaded");
       resolve();
     };
   }),
 
-  loadDictionaryStrings: new Promise(function (resolve, reject) {
-    dictionary.loadStrings("data/dictionary.json").then(function () {
-      resolve();
-      console.log("Yup, dictionary strings loaded.");
-      // TODO: handle errors
-    });
-  }),
-
   setLanguageFromDictionary: function (){
-    dictionary && this.loadDictionaryStrings.then(function () {
-      var backgroundImage = dictionary.pick("_BACKGROUND");
-      backgroundImage = backgroundImage["_BACKGROUND"];
-      backgroundImage = "images/" + backgroundImage;
-      document.getElementsByTagName('html')[0].setAttribute("lang", dictionary.getLang());
-      document.getElementById("main").style.backgroundImage = "url(" + backgroundImage + ")";
-    });
+    var backgroundImage = dictionary.pick("_BACKGROUND");
+    backgroundImage = backgroundImage["_BACKGROUND"];
+    backgroundImage = "images/" + backgroundImage;
+    document.getElementsByTagName('html')[0].setAttribute("lang", dictionary.getLang());
+    document.getElementById("main").style.backgroundImage = "url(" + backgroundImage + ")";
   }
 
 });
@@ -59,12 +48,7 @@ var amnestyApp = new App();
 amnestyApp.Views = {};
 
 $(document).ready(function(){
-  Promise.all([
-    amnestyApp.loadFacebookApi,
-    amnestyApp.loadDictionaryStrings
-  ])
-  .then(function () {
-    console.log("Starting app!");
+  amnestyApp.loadFacebookApi.then(function () {
     amnestyApp.start();
   });
 });

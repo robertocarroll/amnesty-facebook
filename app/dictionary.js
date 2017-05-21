@@ -1,8 +1,9 @@
-(function (global) {
+;(function (global) {
   var defaultLang = "en";
   var lang;
   var strings;
-  var loadStringsPromise;
+  var isStringsLoading = false;
+  var isStringsLoaded = false;
 
   function getLangFromQueryString () {
     // Mostly shamelessly cribbed from here: http://stackoverflow.com/a/901144/20578
@@ -37,49 +38,44 @@
     },
 
     pick: function () {
-      console.log("Picking!");
+      var stringsKeys = arguments;
+      var pickArguments = [strings].concat(stringsKeys);
 
-      var pickedStringsForLang;
+      var pickedStrings = _.pick.apply(global, pickArguments);
 
-      if (strings === undefined) {
-        console.log("No strings yet :(");
-        pickedStringsForLang = undefined;
-      }
-      else {
-        var stringsKeys = arguments;
-        console.log("These:");
-        console.log(arguments);
-        var pickArguments = [strings].concat(stringsKeys);
+      var pickedStringsForLang = _.mapObject(pickedStrings, function (translations, key) {
+        var stringForCurrentLang = translations[lang] || "";
 
-        var pickedStrings = _.pick.apply(global, pickArguments);
-
-        pickedStringsForLang = _.mapObject(pickedStrings, function (translations, key) {
-          var stringForCurrentLang = translations[lang] || "";
-
-          return stringForCurrentLang;
-        });
-      }
+        return stringForCurrentLang;
+      });
 
       return pickedStringsForLang;
     },
 
     loadStrings: function (stringsUrl) {
-      // Only load strings once.
-      if (!loadStringsPromise) {
-        loadStringsPromise = new Promise(function (resolve, reject) {
-          $.getJSON(stringsUrl, function(json) {// TODO: handle errors
+      // Only load strings once
+      if ( !(isStringsLoading || isStringsLoaded) ) {
+        isStringsLoading = true;
+
+        $.ajax({
+          dataType: "json",
+          url: stringsUrl,
+          async: false,
+          success: function (json) {
+            isStringsLoading = false;
+            isStringsLoaded = true;
+
             strings = json;
             setLang(getLangFromQueryString() || defaultLang);
 
             console.log("Strings loaded!");
-            resolve();
-          });
+          }
+          // TODO: handle errors
         });
       }
-
-      return loadStringsPromise;
     }
   };
 
   global.dictionary = dictionary;
 })(window);
+window.dictionary.loadStrings("data/dictionary.json");
