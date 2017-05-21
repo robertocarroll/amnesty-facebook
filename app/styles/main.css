@@ -256,3 +256,33 @@ a.is-loading .button-label {
   0%, 39%, 100% { opacity: 0; }
   40% { opacity: 1; }
 }
+
+ Dim element on hover by adding the dim class.
+
+*/
+.dim {
+  opacity: 1;
+  -webkit-transition: opacity .15s ease-in;
+  transition: opacity .15s ease-in;
+}
+
+@media screen and (min-width: 30em) {
+  .dim:hover, .dim:focus {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    opacity: .5;
+    -webkit-transition: opacity .15s ease-in;
+    transition: opacity .15s ease-in;
+  }
+}
+
+.dim:active {
+  -webkit-backface-visibility:
+  hidden; backface-visibility: hidden;
+  opacity: .8;
+  -webkit-transition: opacity .15s ease-out;
+  transition: opacity .15s ease-out;
+}
+
+/*
+
