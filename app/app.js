@@ -47,6 +47,8 @@ var App = Backbone.Marionette.Application.extend({
 var amnestyApp = new App();
 amnestyApp.Views = {};
 
+
+
 $(document).ready(function(){
   amnestyApp.loadFacebookApi.then(function () {
     amnestyApp.start();
