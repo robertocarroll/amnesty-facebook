@@ -7,7 +7,16 @@ var HelloWorld = Backbone.Marionette.View.extend({
       el: '#loadedFacebook',
       replaceElement: true
     }
+  },
+
+  onRender: function() {
+
+   if ('parentIFrame' in window) {
+      parentIFrame.size();
+    }
+
   }
+
 });
 
 
