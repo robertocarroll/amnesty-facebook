@@ -53,17 +53,18 @@ var Share = Backbone.Marionette.View.extend({
             }
             else{
               // show an error message
-              // show them the actual error
-              console.log(response.error);
-
-              //let them try again
+              if (response.error.type === "OAuthException") {
+                errorMessage = "You are no longer logged into Facebook. Please log into Facebook and try again.";
+              }
+              else {
+                errorMessage = "Please refresh the page and try again."; 
+              }
+              amnestyApp.Views.share.showChildView('shareErrorRegion', new ShareError({errorMessage:errorMessage}));
 
               //put the message in the text field
               if ($('#comment').is(':empty')) {
-                  $('#comment').val(amnestyMessage);
+                  $('#comment').val(facebookPost.message);
               }
-
-
             }
           }
       );

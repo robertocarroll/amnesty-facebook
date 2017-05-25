@@ -66,8 +66,8 @@
       "es":"https://www.amnesty.org/es/"
     },
     "_3NOMINATE_ERROR" : {
-      "en":"Something went wrong. Please try again",
-      "es":"ES_Something went wrong. Please try again"
+      "en":"Something went wrong.",
+      "es":"ES_Something went wrong."
     },
     "_4NOMINATE" : {
       "en":"Nominated",
