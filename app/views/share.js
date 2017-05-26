@@ -15,6 +15,7 @@ var Share = Backbone.Marionette.View.extend({
           button.classList.toggle('is-loading');
         }
 
+        var amnestyPageID = "111658128847068";
         var amnestyMessage = $("textarea").val();
         var amnestyUserID = this.model.id;
         var amnestyUserName = this.model.attributes.name;
@@ -26,7 +27,7 @@ var Share = Backbone.Marionette.View.extend({
         amnestyMessage = amnestyUserName + amnestyWrapper + amnestyMessage;
         var facebookPost = {
           "message": amnestyMessage,
-          "tags": amnestyUserID,
+          "tags": amnestyUserID + "," + amnestyPageID,
           "link": amnestyLink
         };
 
