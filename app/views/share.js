@@ -27,8 +27,9 @@ var Share = Backbone.Marionette.View.extend({
         amnestyMessage = amnestyUserName + amnestyWrapper + amnestyMessage;
         var facebookPost = {
           "message": amnestyMessage,
-          "tags": amnestyUserID + "," + amnestyPageID,
-          "link": amnestyLink
+          "tags": amnestyUserID,
+          "link": amnestyLink,
+          "place": amnestyPageID
         };
 
         this.postToFacebook(facebookPost);
