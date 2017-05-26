@@ -17,15 +17,26 @@ var App = Backbone.Marionette.Application.extend({
   },
 
   loadFacebookApi: new Promise(function (resolve, reject) {
+    var facebookSDKTimeout,
+        FACEBOOK_SDK_TIMEOUT_LIMIT = 1000 * 60;// 1 minute
+
     (function(d, s, id){
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) {return;}
       js = d.createElement(s); js.id = id;
+      js.onerror = function () {
+        reject("error");
+      };
       js.src = "//connect.facebook.net/en_US/sdk.js";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));// TODO: handle errors
+    }(document, 'script', 'facebook-jssdk'));
+
+    facebookSDKTimeout = window.setTimeout(function () {
+      reject("timeout");
+    }, FACEBOOK_SDK_TIMEOUT_LIMIT);
 
     window.fbAsyncInit = function() {
+      window.clearTimeout(facebookSDKTimeout);
       FB.init({
         appId       : '148573185670966',
         status      : true, // check login status
@@ -56,5 +67,12 @@ amnestyApp.Models = {};
 $(document).ready(function(){
   amnestyApp.loadFacebookApi.then(function () {
     amnestyApp.start();
+  }, function (errorDescription) {
+    if (errorDescription === "error") {
+      // TODO: handle Facebook API load error
+    }
+    else if (errorDescription === "timeout") {
+      // TODO: handle Facebook API load timeout
+    }
   });
 });
