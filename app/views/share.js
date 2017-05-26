@@ -2,9 +2,16 @@ var Share = Backbone.Marionette.View.extend({
   template: '#share',
   templateContext: dictionary.pick("_1NOMINATE", "_1NOMINATE_DESC", "_3NOMINATE_CALL", "_3NOMINATE_BTN_2", "_3NOMINATE_LINK", "_3NOMINATE_WRAPPER"),
 
+  regions: {
+    shareErrorRegion: {
+      el: '#errorShare',
+      replaceElement: true
+    }
+  },
+
   events: {
         "click .shareForm": "onSubmit"
-    },
+  },
 
     onSubmit: function(e) {
         var button = e.currentTarget;
@@ -54,7 +61,19 @@ var Share = Backbone.Marionette.View.extend({
               amnestyApp.mainRegion.show (amnestyApp.Views.success);
             }
             else{
-              console.log(response.error);
+              // show an error message
+              if (response.error.type === "OAuthException") {
+                errorMessage = "You are no longer logged into Facebook. Please log into Facebook and try again.";
+              }
+              else {
+                errorMessage = "Please refresh the page and try again."; 
+              }
+              amnestyApp.Views.share.showChildView('shareErrorRegion', new ShareError({errorMessage:errorMessage}));
+
+              //put the message in the text field
+              if ($('#comment').is(':empty')) {
+                  $('#comment').val(facebookPost.message);
+              }
             }
           }
       );

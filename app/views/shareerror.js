@@ -3,6 +3,6 @@ var ShareError = Backbone.Marionette.View.extend({
     this.options = attrs;
     var errorMessage = this.options.errorMessage;
   },
-  template: '#shareError',
+  template: '#shareerror',
   templateContext: dictionary.pick("_3NOMINATE_ERROR")
 });

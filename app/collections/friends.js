@@ -24,11 +24,6 @@ var Friends = Backbone.PageableCollection.extend({
         return false;
       }
 
-      if (response.paging.next == null ) {
-        // set the lastPage in the page model
-        //this.model.set('lastPage', this.state.currentPage);
-      }
-
       return response.paging;
     }
 });

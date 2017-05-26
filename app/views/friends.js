@@ -52,7 +52,14 @@ var FriendsView = Backbone.Marionette.View.extend({
           self.render();
           self.updatePaginationControls();
         }
+      },
+      error: function (collection) {
+        //show the start view again
+        amnestyApp.mainRegion.show(amnestyApp.Views.hello);
+        //but with a message that the friends didn't work
+        amnestyApp.Views.hello.showChildView('facebookErrorRegion', new FriendsError());
       }
+
     });
   },
 
