@@ -2,7 +2,13 @@ var FriendsView = Backbone.Marionette.View.extend({
   el: '#app',
   template: '#friends',
 
-  templateContext: dictionary.pick("_1NOMINATE","_1NOMINATE_DESC","_2NOMINATE_CALL"),
+  templateContext() {
+    return {
+      _1NOMINATE: dictionary.pick("_1NOMINATE")["_1NOMINATE"],
+      _1NOMINATE_DESC: dictionary.pick("_1NOMINATE_DESC")["_1NOMINATE_DESC"],
+      _2NOMINATE_CALL: dictionary.pick("_2NOMINATE_CALL")["_2NOMINATE_CALL"]
+    }
+  },
 
   regions: {
     body: {

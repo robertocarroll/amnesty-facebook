@@ -60,7 +60,7 @@
         $.ajax({
           dataType: "json",
           url: stringsUrl,
-          async: false,
+          async: true,
           success: function (json) {
             isStringsLoading = false;
             isStringsLoaded = true;
