@@ -75,7 +75,10 @@ amnestyApp.Models = {};
 
 
 $(document).ready(function(){
-  amnestyApp.loadFacebookApi.then(function () {
+  Promise.all([
+    amnestyApp.loadFacebookApi,
+    dictionary.loadStrings("data/dictionary.json")
+  ]).then(function () {
     amnestyApp.start();
-  });
+  });// TODO: handle errors?
 });

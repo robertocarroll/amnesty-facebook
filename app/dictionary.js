@@ -2,8 +2,7 @@
   var defaultLang = "en";
   var lang;
   var strings;
-  var isStringsLoading = false;
-  var isStringsLoaded = false;
+  var loadStringsPromise;
 
   function getLangFromQueryString () {
     // Mostly shamelessly cribbed from here: http://stackoverflow.com/a/901144/20578
@@ -53,27 +52,28 @@
     },
 
     loadStrings: function (stringsUrl) {
-      // Only load strings once
-      if ( !(isStringsLoading || isStringsLoaded) ) {
-        isStringsLoading = true;
+      if (loadStringsPromise === undefined) {
+        loadStringsPromise = new Promise(function (resolve, reject) {
+          $.ajax({
+            dataType: "json",
+            url: stringsUrl,
+            async: true,
+            success: function (json) {
+              strings = json;
+              setLang(getLangFromQueryString() || defaultLang);
 
-        $.ajax({
-          dataType: "json",
-          url: stringsUrl,
-          async: true,
-          success: function (json) {
-            isStringsLoading = false;
-            isStringsLoaded = true;
-
-            strings = json;
-            setLang(getLangFromQueryString() || defaultLang);
-          }
-          // TODO: handle errors
+              resolve();
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+              reject(textStatus);// TODO: do we need any other error handling here?
+            }
+          });
         });
       }
+
+      return loadStringsPromise;
     }
   };
 
   global.dictionary = dictionary;
 })(window);
-window.dictionary.loadStrings("data/dictionary.json");
