@@ -48,24 +48,24 @@ var App = Backbone.Marionette.Application.extend({
   },
 
   removeLoadingScreen: function () {
-  var loadingScreenEl = document.getElementById('loading');
+    var loadingScreenEl = document.getElementById('loading');
 
-  if (!loadingScreenEl) {
-    return;
-  }
+    if (!loadingScreenEl) {
+      return;
+    }
 
-  if(typeof loadingScreenEl.style['transition'] !== 'undefined') {
-    loadingScreenEl && loadingScreenEl.addEventListener('transitionend', function () {
+    if(typeof loadingScreenEl.style['transition'] !== 'undefined') {
+      loadingScreenEl && loadingScreenEl.addEventListener('transitionend', function () {
+        loadingScreenEl.parentNode.removeChild(loadingScreenEl);
+      });
+
+      loadingScreenEl.style.opacity = '0';
+    }
+
+    else {
       loadingScreenEl.parentNode.removeChild(loadingScreenEl);
-    });
-
-    loadingScreenEl.style.opacity = '0';
+    }
   }
-
-  else {
-    loadingScreenEl.parentNode.removeChild(loadingScreenEl);
-  }
-}
 
 });
 
