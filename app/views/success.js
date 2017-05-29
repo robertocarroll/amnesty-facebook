@@ -2,7 +2,7 @@ var Success = Backbone.Marionette.View.extend({
   template: '#success',
   templateContext: dictionary.pick("_4NOMINATE", "_4NOMINATE_DESC", "_4NOMINATE_BTN_2","_4IFRAME"),
 
-  templateContext() {
+  templateContext: function () {
     return {
       _4NOMINATE: dictionary.pick("_4NOMINATE")["_4NOMINATE"],
       _4NOMINATE_DESC: dictionary.pick("_4NOMINATE_DESC")["_4NOMINATE_DESC"],

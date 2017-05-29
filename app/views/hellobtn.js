@@ -1,7 +1,7 @@
 var HelloBtn = Backbone.Marionette.View.extend({
   template: '#hellobtn',
 
-  templateContext() {
+  templateContext: function () {
     return {
       _1NOMINATE_BTN: dictionary.pick("_1NOMINATE_BTN")["_1NOMINATE_BTN"]
     }
