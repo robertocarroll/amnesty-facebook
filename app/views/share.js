@@ -1,6 +1,16 @@
 var Share = Backbone.Marionette.View.extend({
   template: '#share',
-  templateContext: dictionary.pick("_1NOMINATE", "_1NOMINATE_DESC", "_3NOMINATE_CALL", "_3NOMINATE_BTN_2", "_3NOMINATE_LINK", "_3NOMINATE_WRAPPER"),
+
+  templateContext: function () {
+    return {
+      _1NOMINATE: dictionary.pick("_1NOMINATE")["_1NOMINATE"],
+      _1NOMINATE_DESC: dictionary.pick("_1NOMINATE_DESC")["_1NOMINATE_DESC"],
+      _3NOMINATE_CALL: dictionary.pick("_3NOMINATE_CALL")["_3NOMINATE_CALL"],
+      _3NOMINATE_BTN_2: dictionary.pick("_3NOMINATE_BTN_2")["_3NOMINATE_BTN_2"],
+      _3NOMINATE_LINK: dictionary.pick("_3NOMINATE_LINK")["_3NOMINATE_LINK"],
+      _3NOMINATE_WRAPPER: dictionary.pick("_3NOMINATE_WRAPPER")["_3NOMINATE_WRAPPER"]
+    }
+  },
 
   regions: {
     shareErrorRegion: {
@@ -66,7 +76,7 @@ var Share = Backbone.Marionette.View.extend({
                 errorMessage = "You are no longer logged into Facebook. Please log into Facebook and try again.";
               }
               else {
-                errorMessage = "Please refresh the page and try again."; 
+                errorMessage = "Please refresh the page and try again.";
               }
               amnestyApp.Views.share.showChildView('shareErrorRegion', new ShareError({errorMessage:errorMessage}));
 

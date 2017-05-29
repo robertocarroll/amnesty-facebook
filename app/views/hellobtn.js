@@ -1,7 +1,11 @@
 var HelloBtn = Backbone.Marionette.View.extend({
   template: '#hellobtn',
 
-  templateContext: dictionary.pick("_1NOMINATE_BTN"),
+  templateContext: function () {
+    return {
+      _1NOMINATE_BTN: dictionary.pick("_1NOMINATE_BTN")["_1NOMINATE_BTN"]
+    }
+  },
 
   events: {
       'click .btn-login': 'login'

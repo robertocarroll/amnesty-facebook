@@ -7,6 +7,7 @@ var App = Backbone.Marionette.Application.extend({
 
   onStart: function() {
     amnestyApp.mainRegion = this.getRegion();
+    this.removeLoadingScreen();
     amnestyApp.Models.amnestyUser = new Person();
 
     amnestyApp.Views.hello = new HelloWorld({
@@ -44,6 +45,26 @@ var App = Backbone.Marionette.Application.extend({
     backgroundImage = "images/" + backgroundImage;
     document.getElementsByTagName('html')[0].setAttribute("lang", dictionary.getLang());
     document.getElementById("main").style.backgroundImage = "url(" + backgroundImage + ")";
+  },
+
+  removeLoadingScreen: function () {
+    var loadingScreenEl = document.getElementById('loading');
+
+    if (!loadingScreenEl) {
+      return;
+    }
+
+    if(typeof loadingScreenEl.style['transition'] !== 'undefined') {
+      loadingScreenEl && loadingScreenEl.addEventListener('transitionend', function () {
+        loadingScreenEl.parentNode.removeChild(loadingScreenEl);
+      });
+
+      loadingScreenEl.style.opacity = '0';
+    }
+
+    else {
+      loadingScreenEl.parentNode.removeChild(loadingScreenEl);
+    }
   }
 
 });
@@ -54,7 +75,10 @@ amnestyApp.Models = {};
 
 
 $(document).ready(function(){
-  amnestyApp.loadFacebookApi.then(function () {
+  Promise.all([
+    amnestyApp.loadFacebookApi,
+    dictionary.loadStrings("data/dictionary.json")
+  ]).then(function () {
     amnestyApp.start();
-  });
+  });// TODO: handle errors?
 });

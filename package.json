@@ -6,7 +6,7 @@
   "scripts": {
     "copy-vendor-js": "./scripts/copy-vendor-js.sh",
     "start": "http-server ./ --silent",
-    "build:js": "uglifyjs app/vendor/jquery.min.js app/vendor/underscore-min.js app/vendor/backbone-min.js app/vendor/backbone.radio.min.js app/vendor/backbone.marionette.min.js app/vendor/backbone.paginator.min.js app/data/dictionary.js app/models/*.js app/collections/*.js app/views/hellobtn.js app/views/hello.js app/views/friendsnone.js app/views/friendslistitem.js app/views/friendslist.js app/views/friends.js app/views/shareerror.js app/views/share.js app/views/success.js app/*.js --compress --mangle --output docs/javascripts/amnesty-brave.min.js"
+    "build:js": "uglifyjs app/vendor/jquery.min.js app/vendor/underscore-min.js app/vendor/backbone-min.js app/vendor/backbone.radio.min.js app/vendor/backbone.marionette.min.js app/vendor/backbone.paginator.min.js app/vendor/iframeResizer.contentWindow.min.js app/models/*.js app/collections/*.js app/views/hellobtn.js app/views/hello.js app/views/friendsnone.js app/views/friendslistitem.js app/views/friendslist.js app/views/friends.js app/views/shareerror.js app/views/share.js app/views/success.js app/*.js --compress --mangle --output docs/javascripts/amnesty-brave.min.js"
   },
   "repository": {
     "type": "git",
