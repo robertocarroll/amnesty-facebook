@@ -288,3 +288,7 @@ a.is-loading .button-label {
   text-align: center;
   text-transform: uppercase;
 }
+
+.no-show {
+  visibility: hidden;
+}
