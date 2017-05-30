@@ -94,12 +94,10 @@ $(document).ready(function(){
   }, function (errorDescription) {
     if (errorDescription === "error") {
       //show error message
-      amnestyApp.Views.hello.showChildView('facebookErrorRegion', new HelloError());
+
     }
     else if (errorDescription === "timeout") {
-      // TODO: handle Facebook API load timeout
       //show error message
-      amnestyApp.Views.hello.showChildView('facebookErrorRegion', new HelloError());
     }
   });
 });
