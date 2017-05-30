@@ -1,6 +1,15 @@
 var HelloWorld = Backbone.Marionette.View.extend({
   template: '#hello',
-  templateContext: dictionary.pick("_1NOMINATE", "_1NOMINATE_DESC", "_1NOMINATE_CALL", "_1NOMINATE_BTN", "_1NOMINATE_LOADING"),
+
+  templateContext: function () {
+    return {
+      _1NOMINATE: dictionary.pick("_1NOMINATE")["_1NOMINATE"],
+      _1NOMINATE_DESC: dictionary.pick("_1NOMINATE_DESC")["_1NOMINATE_DESC"],
+      _1NOMINATE_CALL: dictionary.pick("_1NOMINATE_CALL")["_1NOMINATE_CALL"],
+      _1NOMINATE_LOADING: dictionary.pick("_1NOMINATE_LOADING")["_1NOMINATE_LOADING"]
+    }
+  },
+
 
   regions: {
     facebookCallRegion: {
@@ -17,7 +26,7 @@ var HelloWorld = Backbone.Marionette.View.extend({
     'change:loggedIn': 'handleLogin'
   },
 
-  handleLogin() {
+  handleLogin: function () {
     var loggedInStatus = this.model.get('loggedIn');
 
     if (loggedInStatus == "true") {
@@ -29,14 +38,14 @@ var HelloWorld = Backbone.Marionette.View.extend({
     }
   },
 
-  getFriends() {
+  getFriends: function () {
     var token = this.model.get('token');
     amnestyApp.Views.myFriends = new FriendsView ({
        token: token
     });
   },
 
-  loginFailed() {
+  loginFailed: function () {
     //show error message
     amnestyApp.Views.hello.showChildView('facebookErrorRegion', new HelloError());
     //show button to try again
