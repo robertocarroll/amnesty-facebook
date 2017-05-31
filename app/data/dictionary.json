@@ -3,6 +3,10 @@
     "en": "464656512-web.jpg",
     "es": "test.png"
   },
+  "_1FACEBOOK_ERROR" : {
+    "en": "Sorry. Facebook doesn't seem to be working. Please refresh the page.",
+    "es": "ES_Sorry. Facebook doesn't seem to be working. Please refresh the page."
+  },
   "_1NOMINATE" : {
     "en": "Nominate",
     "es": "ES_Nominate"

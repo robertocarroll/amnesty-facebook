@@ -86,18 +86,22 @@ amnestyApp.Models = {};
 
 
 $(document).ready(function(){
+  amnestyApp.loadDictionary = dictionary.loadStrings("data/dictionary.json");
   Promise.all([
     amnestyApp.loadFacebookApi,
-    dictionary.loadStrings("data/dictionary.json")
+    amnestyApp.loadDictionary
   ]).then(function () {
     amnestyApp.start();
   }, function (errorDescription) {
     if (errorDescription === "error") {
-      //show error message
-
+      amnestyApp.removeLoadingScreen();
+      amnestyApp.Views.facebookerror = new FacebookError();
+      amnestyApp.Views.facebookerror.render();
     }
     else if (errorDescription === "timeout") {
-      //show error message
+      amnestyApp.removeLoadingScreen();
+      amnestyApp.Views.facebookerror = new FacebookError();
+      amnestyApp.Views.facebookerror.render();
     }
   });
 });
