@@ -95,11 +95,13 @@ $(document).ready(function(){
   }, function (errorDescription) {
     if (errorDescription === "error") {
       amnestyApp.removeLoadingScreen();
+      amnestyApp.setLanguageFromDictionary();
       amnestyApp.Views.facebookerror = new FacebookError();
       amnestyApp.Views.facebookerror.render();
     }
     else if (errorDescription === "timeout") {
       amnestyApp.removeLoadingScreen();
+      amnestyApp.setLanguageFromDictionary();
       amnestyApp.Views.facebookerror = new FacebookError();
       amnestyApp.Views.facebookerror.render();
     }
