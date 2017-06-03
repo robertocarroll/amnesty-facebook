@@ -53,7 +53,6 @@ var HelloWorld = Backbone.Marionette.View.extend({
   },
 
   onRender: function() {
-
    if ('parentIFrame' in window) {
       parentIFrame.size();
     }

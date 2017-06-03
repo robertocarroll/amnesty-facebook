@@ -84,7 +84,6 @@ var amnestyApp = new App();
 amnestyApp.Views = {};
 amnestyApp.Models = {};
 
-
 $(document).ready(function(){
   amnestyApp.loadDictionary = dictionary.loadStrings("data/dictionary.json");
   Promise.all([
@@ -94,16 +93,12 @@ $(document).ready(function(){
     amnestyApp.start();
   }, function (errorDescription) {
     if (errorDescription === "error") {
-      amnestyApp.removeLoadingScreen();
-      amnestyApp.setLanguageFromDictionary();
-      amnestyApp.Views.facebookerror = new FacebookError();
-      amnestyApp.Views.facebookerror.render();
+
+
     }
     else if (errorDescription === "timeout") {
-      amnestyApp.removeLoadingScreen();
-      amnestyApp.setLanguageFromDictionary();
-      amnestyApp.Views.facebookerror = new FacebookError();
-      amnestyApp.Views.facebookerror.render();
+
+
     }
   });
 });
