@@ -1,4 +1,7 @@
-var HelloError = Backbone.Marionette.View.extend({
+var Marionette = require('backbone.marionette');
+var tpl = require('./helloerror.hbs');
+
+module.exports = Marionette.View.extend({
   template: '#helloerror',
   templateContext: function () {
     return {

@@ -1,4 +1,10 @@
-var FriendsView = Backbone.Marionette.View.extend({
+var Marionette = require('backbone.marionette');
+var FriendsList = require('./views/friendslist.js');
+var FriendsError = require('./views/friendserror.js');
+var FriendsNone = require('./views/friendsnone.js');
+var tpl = require('./friends.hbs');
+
+module.exports = Marionette.View.extend({
   el: '#app',
   template: '#friends',
 

@@ -1,5 +1,12 @@
-var HelloWorld = Backbone.Marionette.View.extend({
-  template: '#hello',
+var Marionette = require('backbone.marionette');
+var iframeResizer = require('iframe-resizer');
+var HelloBtn = require('views/hellobtn.js');
+var HelloError = require('views/helloerror.js');
+var FriendsView = require('views/friends.js');
+var tpl = require('./hello.hbs');
+
+module.exports = Marionette.View.extend({
+  template: tpl,
 
   templateContext: function () {
     return {
@@ -9,7 +16,6 @@ var HelloWorld = Backbone.Marionette.View.extend({
       _1NOMINATE_LOADING: dictionary.pick("_1NOMINATE_LOADING")["_1NOMINATE_LOADING"]
     }
   },
-
 
   regions: {
     facebookCallRegion: {

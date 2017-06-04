@@ -1,4 +1,20 @@
-var App = Backbone.Marionette.Application.extend({
+var $ = require('jquery');
+var Backbone = require('backbone');
+Backbone.$ = $;
+var Marionette = require('backbone.marionette');
+var Promise = require('es6-promise').Promise;
+var dictionary = require('./dictionary.js');
+var Person = require('./models/person.js');
+var Friend = require('./models/friend.js');
+var Friends = require('./collections/friends.js');
+var FacebookError = require('./view/facebookerror.js');
+var HelloWorld = require('./view/hello.js');
+var HelloBtn = require('./view/hellobtn.js');
+var FriendsView = require('./view/friends.js');
+var Share = require('./view/share.js');
+var Success = require('./view/success.js');
+
+module.exports = Marionette.Application.extend({
   region: '#app',
 
   onBeforeStart: function () {
@@ -102,3 +118,5 @@ $(document).ready(function(){
     }
   });
 });
+
+module.exports = amnestyApp;

@@ -7,7 +7,7 @@ module.exports = function (grunt) {
         browserify: {
             // just the app
             app: {
-                src: 'src/app.js',
+                src: 'app/app.js',
                 dest: 'docs/app.js',
                 options: {
                     debug: true,
@@ -64,7 +64,7 @@ module.exports = function (grunt) {
                 interrupt: true
             },
             src: {
-                files: ['app/**/*', '!src/index.html'],
+                files: ['app/**/*', '!app/index.html'],
                 tasks: ['browserify:app'],
             },
             index: {

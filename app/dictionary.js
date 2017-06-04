@@ -1,4 +1,4 @@
-;(function (global) {
+module.exports = function() {
   var defaultLang = "en";
   var lang;
   var strings;
@@ -74,6 +74,4 @@
       return loadStringsPromise;
     }
   };
-
-  global.dictionary = dictionary;
-})(window);
+}

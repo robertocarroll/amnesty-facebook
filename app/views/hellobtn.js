@@ -1,5 +1,8 @@
-var HelloBtn = Backbone.Marionette.View.extend({
-  template: '#hellobtn',
+var Marionette = require('backbone.marionette');
+var tpl = require('./hellobtn.hbs');
+
+module.exports = Marionette.View.extend({
+  template: tpl,
 
   templateContext: function () {
     return {

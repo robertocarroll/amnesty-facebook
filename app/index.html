@@ -23,35 +23,14 @@
       <div id="app" class="measure center"></div>
     </div>
 
-    <!-- vendor -->
+     <!--(if target dev)><!-->
+      <script src="docs/vendors.js"></script>
+      <script src="docs/app.js"></script>
+    <!--<!(endif)-->
 
-      <script src="./vendor/jquery.min.js"></script>
-      <script src="./vendor/underscore-min.js"></script>
-      <script src="./vendor/backbone-min.js"></script>
-      <script src="./vendor/backbone.radio.min.js"></script>
-      <script src="./vendor/backbone.marionette.min.js"></script>
-      <script src="./vendor/backbone.paginator.min.js"></script>
-      <script src="./vendor/polyfills/es6-promise.auto.min.js"></script>
-      <script src="./vendor/iframeResizer.contentWindow.min.js"></script>
-
-    <!-- app files -->
-      <script src="./dictionary.js"></script>
-      <script src="./models/person.js"></script>
-      <script src="./models/friend.js"></script>
-      <script src="./collections/friends.js"></script>
-      <script src="./views/facebookerror.js"></script>
-      <script src="./views/helloerror.js"></script>
-      <script src="./views/hellobtn.js"></script>
-      <script src="./views/hello.js"></script>
-      <script src="./views/friendserror.js"></script>
-      <script src="./views/friendsnone.js"></script>
-      <script src="./views/friendslistitem.js"></script>
-      <script src="./views/friendslist.js"></script>
-      <script src="./views/friends.js"></script>
-      <script src="./views/shareerror.js"></script>
-      <script src="./views/share.js"></script>
-      <script src="./views/success.js"></script>
-      <script src="./app.js"></script>
+    <!--(if target prod)><!-->
+      <script src="docs/bundle.js"></script>
+    <!--<!(endif)-->
 
   </body>
 </html>

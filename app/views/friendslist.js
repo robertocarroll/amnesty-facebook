@@ -1,4 +1,7 @@
-var FriendsList = Backbone.Marionette.CollectionView.extend({
+var Marionette = require('backbone.marionette');
+var Share = require('./views/share.js');
+
+module.exports = Backbone.Marionette.CollectionView.extend({
   tagName: 'div',
   className: 'friendsContainer bg-white-80',
   childView: FriendsListItem,

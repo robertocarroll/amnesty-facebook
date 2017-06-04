@@ -1,9 +1,12 @@
-var ShareError = Backbone.Marionette.View.extend({
+var Marionette = require('backbone.marionette');
+var tpl = require('./shareerror.hbs');
+
+module.exports = Marionette.View.extend({
   initialize: function (attrs) {
     this.options = attrs;
     var errorMessage = this.options.errorMessage;
   },
-  template: '#shareerror',
+  template: tpl,
 
   templateContext: function () {
     return {

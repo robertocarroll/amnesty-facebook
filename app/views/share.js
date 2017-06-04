@@ -1,5 +1,10 @@
-var Share = Backbone.Marionette.View.extend({
-  template: '#share',
+var Marionette = require('backbone.marionette');
+var Success = require('./views/success.js');
+var ShareError = require('./views/successerror.js');
+var tpl = require('./share.hbs');
+
+module.exports = Marionette.View.extend({
+  template: tpl,
 
   templateContext: function () {
     return {

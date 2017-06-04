@@ -1,5 +1,8 @@
-var Success = Backbone.Marionette.View.extend({
-  template: '#success',
+var Marionette = require('backbone.marionette');
+var tpl = require('./success.hbs');
+
+module.exports = Marionette.View.extend({
+  template: tpl,
   templateContext: dictionary.pick("_4NOMINATE", "_4NOMINATE_DESC", "_4NOMINATE_BTN_2","_4IFRAME"),
 
   templateContext: function () {

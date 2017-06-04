@@ -1,4 +1,6 @@
-var Friends = Backbone.PageableCollection.extend({
+PageableCollection = require('backbone.paginator');
+
+module.exports = PageableCollection.extend({
     model: Friend,
     initialize: function(options) {
         this.token = options.token;
