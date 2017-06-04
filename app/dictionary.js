@@ -1,3 +1,5 @@
+var _ = require('underscore');
+
 module.exports = function() {
  ;(function (global) {
   var defaultLang = "en";

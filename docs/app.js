@@ -158,6 +158,8 @@ module.exports = PageableCollection.extend({
 });
 
 },{"../models/friend.js":4,"backbone.paginator":27}],3:[function(require,module,exports){
+var _ = require('underscore');
+
 module.exports = function() {
  ;(function (global) {
   var defaultLang = "en";
@@ -239,7 +241,7 @@ module.exports = function() {
   })(window);
 };
 
-},{}],4:[function(require,module,exports){
+},{"underscore":52}],4:[function(require,module,exports){
 var Backbone = require('backbone');
 
 module.exports = Backbone.Model.extend({
@@ -318,7 +320,6 @@ module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":f
 
 },{"hbsfy/runtime":47}],7:[function(require,module,exports){
 var Marionette = require('backbone.marionette');
-var _ = require('underscore');
 var dictionary = require('../dictionary.js');
 var tpl = require('./facebookerror.hbs');
 
@@ -332,7 +333,7 @@ module.exports = Marionette.View.extend({
   }
 });
 
-},{"../dictionary.js":3,"./facebookerror.hbs":6,"backbone.marionette":"backbone.marionette","underscore":52}],8:[function(require,module,exports){
+},{"../dictionary.js":3,"./facebookerror.hbs":6,"backbone.marionette":"backbone.marionette"}],8:[function(require,module,exports){
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
@@ -349,7 +350,6 @@ module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":f
 
 },{"hbsfy/runtime":47}],9:[function(require,module,exports){
 var Marionette = require('backbone.marionette');
-var _ = require('underscore');
 var dictionary = require('../dictionary.js');
 var FriendsList = require('./friendslist.js');
 var FriendsError = require('./friendserror.js');
@@ -470,7 +470,7 @@ module.exports = Marionette.View.extend({
   }
 });
 
-},{"../dictionary.js":3,"./friends.hbs":8,"./friendserror.js":11,"./friendslist.js":12,"./friendsnone.js":14,"backbone.marionette":"backbone.marionette","underscore":52}],10:[function(require,module,exports){
+},{"../dictionary.js":3,"./friends.hbs":8,"./friendserror.js":11,"./friendslist.js":12,"./friendsnone.js":14,"backbone.marionette":"backbone.marionette"}],10:[function(require,module,exports){
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
@@ -483,7 +483,6 @@ module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":f
 
 },{"hbsfy/runtime":47}],11:[function(require,module,exports){
 var Marionette = require('backbone.marionette');
-var _ = require('underscore');
 var dictionary = require('../dictionary.js');
 var tpl = require('./friendserror.hbs');
 
@@ -496,9 +495,8 @@ module.exports = Marionette.View.extend({
   }
 });
 
-},{"../dictionary.js":3,"./friendserror.hbs":10,"backbone.marionette":"backbone.marionette","underscore":52}],12:[function(require,module,exports){
+},{"../dictionary.js":3,"./friendserror.hbs":10,"backbone.marionette":"backbone.marionette"}],12:[function(require,module,exports){
 var Marionette = require('backbone.marionette');
-var _ = require('underscore');
 var dictionary = require('../dictionary.js');
 var Share = require('./share.js');
 
@@ -523,7 +521,7 @@ module.exports = Backbone.Marionette.CollectionView.extend({
   }
 });
 
-},{"../dictionary.js":3,"./share.js":22,"backbone.marionette":"backbone.marionette","underscore":52}],13:[function(require,module,exports){
+},{"../dictionary.js":3,"./share.js":22,"backbone.marionette":"backbone.marionette"}],13:[function(require,module,exports){
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
@@ -536,7 +534,6 @@ module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":f
 
 },{"hbsfy/runtime":47}],14:[function(require,module,exports){
 var Marionette = require('backbone.marionette');
-var _ = require('underscore');
 var dictionary = require('../dictionary.js');
 var tpl = require('./friendsnone.hbs');
 
@@ -545,7 +542,7 @@ module.exports = Backbone.Marionette.View.extend({
   templateContext: dictionary.pick("_2NOMINATE_NONE")
 });
 
-},{"../dictionary.js":3,"./friendsnone.hbs":13,"backbone.marionette":"backbone.marionette","underscore":52}],15:[function(require,module,exports){
+},{"../dictionary.js":3,"./friendsnone.hbs":13,"backbone.marionette":"backbone.marionette"}],15:[function(require,module,exports){
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
@@ -564,7 +561,6 @@ module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":f
 
 },{"hbsfy/runtime":47}],16:[function(require,module,exports){
 var Marionette = require('backbone.marionette');
-var _ = require('underscore');
 var dictionary = require('../dictionary.js');
 var iframeResizer = require('iframe-resizer');
 var HelloBtn = require('./hellobtn.js');
@@ -635,7 +631,7 @@ module.exports = Marionette.View.extend({
 
 
 
-},{"../dictionary.js":3,"./friends.js":9,"./hello.hbs":15,"./hellobtn.js":18,"./helloerror.js":20,"backbone.marionette":"backbone.marionette","iframe-resizer":48,"underscore":52}],17:[function(require,module,exports){
+},{"../dictionary.js":3,"./friends.js":9,"./hello.hbs":15,"./hellobtn.js":18,"./helloerror.js":20,"backbone.marionette":"backbone.marionette","iframe-resizer":48}],17:[function(require,module,exports){
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
@@ -648,7 +644,6 @@ module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":f
 
 },{"hbsfy/runtime":47}],18:[function(require,module,exports){
 var Marionette = require('backbone.marionette');
-var _ = require('underscore');
 var dictionary = require('../dictionary.js');
 var tpl = require('./hellobtn.hbs');
 
@@ -679,7 +674,7 @@ module.exports = Marionette.View.extend({
     }
 });
 
-},{"../dictionary.js":3,"./hellobtn.hbs":17,"backbone.marionette":"backbone.marionette","underscore":52}],19:[function(require,module,exports){
+},{"../dictionary.js":3,"./hellobtn.hbs":17,"backbone.marionette":"backbone.marionette"}],19:[function(require,module,exports){
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
@@ -692,7 +687,6 @@ module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":f
 
 },{"hbsfy/runtime":47}],20:[function(require,module,exports){
 var Marionette = require('backbone.marionette');
-var _ = require('underscore');
 var dictionary = require('../dictionary.js');
 var tpl = require('./helloerror.hbs');
 
@@ -705,7 +699,7 @@ module.exports = Marionette.View.extend({
   }
 });
 
-},{"../dictionary.js":3,"./helloerror.hbs":19,"backbone.marionette":"backbone.marionette","underscore":52}],21:[function(require,module,exports){
+},{"../dictionary.js":3,"./helloerror.hbs":19,"backbone.marionette":"backbone.marionette"}],21:[function(require,module,exports){
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
@@ -728,7 +722,6 @@ module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":f
 
 },{"hbsfy/runtime":47}],22:[function(require,module,exports){
 var Marionette = require('backbone.marionette');
-var _ = require('underscore');
 var dictionary = require('../dictionary.js');
 var Success = require('./success.js');
 var ShareError = require('./shareerror.js');
@@ -826,7 +819,7 @@ module.exports = Marionette.View.extend({
     }
   });
 
-},{"../dictionary.js":3,"./share.hbs":21,"./shareerror.js":24,"./success.js":26,"backbone.marionette":"backbone.marionette","underscore":52}],23:[function(require,module,exports){
+},{"../dictionary.js":3,"./share.hbs":21,"./shareerror.js":24,"./success.js":26,"backbone.marionette":"backbone.marionette"}],23:[function(require,module,exports){
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
@@ -841,7 +834,6 @@ module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":f
 
 },{"hbsfy/runtime":47}],24:[function(require,module,exports){
 var Marionette = require('backbone.marionette');
-var _ = require('underscore');
 var tpl = require('./shareerror.hbs');
 
 module.exports = Marionette.View.extend({
@@ -859,7 +851,7 @@ module.exports = Marionette.View.extend({
 
 });
 
-},{"./shareerror.hbs":23,"backbone.marionette":"backbone.marionette","underscore":52}],25:[function(require,module,exports){
+},{"./shareerror.hbs":23,"backbone.marionette":"backbone.marionette"}],25:[function(require,module,exports){
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
@@ -878,7 +870,6 @@ module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":f
 
 },{"hbsfy/runtime":47}],26:[function(require,module,exports){
 var Marionette = require('backbone.marionette');
-var _ = require('underscore');
 var dictionary = require('../dictionary.js');
 var tpl = require('./success.hbs');
 
@@ -912,7 +903,7 @@ module.exports = Marionette.View.extend({
     }
 });
 
-},{"../dictionary.js":3,"./success.hbs":25,"backbone.marionette":"backbone.marionette","underscore":52}],27:[function(require,module,exports){
+},{"../dictionary.js":3,"./success.hbs":25,"backbone.marionette":"backbone.marionette"}],27:[function(require,module,exports){
 /*
   backbone.paginator
   http://github.com/backbone-paginator/backbone.paginator

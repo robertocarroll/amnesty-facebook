@@ -1,5 +1,4 @@
 var Marionette = require('backbone.marionette');
-var _ = require('underscore');
 var tpl = require('./shareerror.hbs');
 
 module.exports = Marionette.View.extend({
