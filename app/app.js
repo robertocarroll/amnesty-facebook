@@ -26,14 +26,14 @@ var App = Backbone.Marionette.Application.extend({
       if (d.getElementById(id)) {return;}
       js = d.createElement(s); js.id = id;
       js.onerror = function () {
-        reject("error");
+        reject("facebookLoadError");
       };
       js.src = "//connect.facebook.net/en_US/sdk.js";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
     facebookSDKTimeout = window.setTimeout(function () {
-      reject("timeout");
+      reject("facebookLoadTimeout");
     }, FACEBOOK_SDK_TIMEOUT_LIMIT);
 
     window.fbAsyncInit = function() {
@@ -92,13 +92,13 @@ $(document).ready(function(){
   ]).then(function () {
     amnestyApp.start();
   }, function (errorDescription) {
-    if (errorDescription === "error") {
-
-
-    }
-    else if (errorDescription === "timeout") {
-
-
+    if (errorDescription === "facebookLoadError" || errorDescription === "facebookLoadTimeout") {
+      amnestyApp.loadDictionary.then(function () {
+        amnestyApp.removeLoadingScreen();
+        amnestyApp.setLanguageFromDictionary();
+        amnestyApp.Views.facebookerror = new FacebookError();
+        amnestyApp.Views.facebookerror.render();
+      });
     }
   });
 });
