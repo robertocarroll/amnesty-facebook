@@ -1,4 +1,6 @@
 var Marionette = require('backbone.marionette');
+var _ = require('underscore');
+var dictionary = require('../dictionary.js');
 var tpl = require('./success.hbs');
 
 module.exports = Marionette.View.extend({

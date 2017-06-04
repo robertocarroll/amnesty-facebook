@@ -1,4 +1,5 @@
 var $ = require('jquery');
+var _ = require('underscore');
 var Backbone = require('backbone');
 Backbone.$ = $;
 var Marionette = require('backbone.marionette');
@@ -7,12 +8,12 @@ var dictionary = require('./dictionary.js');
 var Person = require('./models/person.js');
 var Friend = require('./models/friend.js');
 var Friends = require('./collections/friends.js');
-var FacebookError = require('./view/facebookerror.js');
-var HelloWorld = require('./view/hello.js');
-var HelloBtn = require('./view/hellobtn.js');
-var FriendsView = require('./view/friends.js');
-var Share = require('./view/share.js');
-var Success = require('./view/success.js');
+var FacebookError = require('./views/facebookerror.js');
+var HelloWorld = require('./views/hello.js');
+var HelloBtn = require('./views/hellobtn.js');
+var FriendsView = require('./views/friends.js');
+var Share = require('./views/share.js');
+var Success = require('./views/success.js');
 
 module.exports = Marionette.Application.extend({
   region: '#app',
@@ -69,7 +70,7 @@ module.exports = Marionette.Application.extend({
   setLanguageFromDictionary: function (){
     var backgroundImage = dictionary.pick("_BACKGROUND");
     backgroundImage = backgroundImage["_BACKGROUND"];
-    backgroundImage = "images/" + backgroundImage;
+    backgroundImage = "../assets/images/" + backgroundImage;
     document.getElementsByTagName('html')[0].setAttribute("lang", dictionary.getLang());
     document.getElementById("main").style.backgroundImage = "url(" + backgroundImage + ")";
   },

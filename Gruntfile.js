@@ -1,6 +1,6 @@
 module.exports = function (grunt) {
 
-    var vendors = 'jquery backbone backbone.marionette backbone.localstorage'.split(' ');
+    var vendors = 'jquery backbone backbone.marionette es6-promise'.split(' ');
 
     grunt.initConfig({
 
@@ -55,8 +55,6 @@ module.exports = function (grunt) {
             }
         },
 
-
-
         watch: {
             options: {
                 livereload: true,
@@ -86,8 +84,6 @@ module.exports = function (grunt) {
                 }
             }
         }
-
-
     });
 
     grunt.loadNpmTasks('grunt-browserify');

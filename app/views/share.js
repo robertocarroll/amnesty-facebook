@@ -1,6 +1,8 @@
 var Marionette = require('backbone.marionette');
-var Success = require('./views/success.js');
-var ShareError = require('./views/successerror.js');
+var _ = require('underscore');
+var dictionary = require('../dictionary.js');
+var Success = require('./success.js');
+var ShareError = require('./shareerror.js');
 var tpl = require('./share.hbs');
 
 module.exports = Marionette.View.extend({

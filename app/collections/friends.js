@@ -1,4 +1,5 @@
-PageableCollection = require('backbone.paginator');
+var PageableCollection = require('backbone.paginator');
+var Friend = require('../models/friend.js');
 
 module.exports = PageableCollection.extend({
     model: Friend,

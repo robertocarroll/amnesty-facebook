@@ -1,5 +1,7 @@
 var Marionette = require('backbone.marionette');
-var Share = require('./views/share.js');
+var _ = require('underscore');
+var dictionary = require('../dictionary.js');
+var Share = require('./share.js');
 
 module.exports = Backbone.Marionette.CollectionView.extend({
   tagName: 'div',

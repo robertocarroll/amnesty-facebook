@@ -1,8 +1,10 @@
 var Marionette = require('backbone.marionette');
+var _ = require('underscore');
+var dictionary = require('../dictionary.js');
 var iframeResizer = require('iframe-resizer');
-var HelloBtn = require('views/hellobtn.js');
-var HelloError = require('views/helloerror.js');
-var FriendsView = require('views/friends.js');
+var HelloBtn = require('./hellobtn.js');
+var HelloError = require('./helloerror.js');
+var FriendsView = require('./friends.js');
 var tpl = require('./hello.hbs');
 
 module.exports = Marionette.View.extend({

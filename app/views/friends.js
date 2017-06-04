@@ -1,7 +1,9 @@
 var Marionette = require('backbone.marionette');
-var FriendsList = require('./views/friendslist.js');
-var FriendsError = require('./views/friendserror.js');
-var FriendsNone = require('./views/friendsnone.js');
+var _ = require('underscore');
+var dictionary = require('../dictionary.js');
+var FriendsList = require('./friendslist.js');
+var FriendsError = require('./friendserror.js');
+var FriendsNone = require('./friendsnone.js');
 var tpl = require('./friends.hbs');
 
 module.exports = Marionette.View.extend({
