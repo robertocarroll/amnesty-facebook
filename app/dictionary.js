@@ -1,8 +1,8 @@
+var $ = require('jquery');
 var _ = require('underscore');
 var Promise = require('es6-promise').Promise;
 
-module.exports = function() {
-
+module.exports = (function () {
   var defaultLang = "en";
   var lang;
   var strings;
@@ -35,7 +35,7 @@ module.exports = function() {
     }
   }
 
-  var dictionary = {
+  return {
     getLang: function () {
       return lang;
     },
@@ -44,7 +44,7 @@ module.exports = function() {
       var stringsKeys = arguments;
       var pickArguments = [strings].concat(stringsKeys);
 
-      var pickedStrings = _.pick.apply(global, pickArguments);
+      var pickedStrings = _.pick.apply({}, pickArguments);
 
       var pickedStringsForLang = _.mapObject(pickedStrings, function (translations, key) {
         var stringForCurrentLang = translations[lang] || "";
@@ -78,4 +78,4 @@ module.exports = function() {
       return loadStringsPromise;
     }
   };
-};
+})();
