@@ -1,4 +1,4 @@
 var FriendsNone = Backbone.Marionette.View.extend({
-  template: '#friendsNone',
+  template: '#friendsnone',
   templateContext: dictionary.pick("_2NOMINATE_NONE")
 });

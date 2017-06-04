@@ -6,218 +6,22 @@
       <title>Amnesty Facebook app</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-      <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-      <link rel="manifest" href="./manifest.json">
-      <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
+      <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
+      <link rel="manifest" href="./assets/manifest.json">
+      <link rel="mask-icon" href="./assets/images/safari-pinned-tab.svg" color="#5bbad5">
       <meta name="theme-color" content="#ffffff">
-      <link rel="stylesheet" href="./styles/tachyons.css">
-      <link rel="stylesheet" href="./styles/main.css">
+      <link rel="stylesheet" href="./assets/styles/tachyons.css">
+      <link rel="stylesheet" href="./assets/styles/main.css">
   </head>
 
   <body>
     <section id="loading">
       <p>Loading...</p>
     </section>
-    <div class="vh-100 dt w-100 tc bg-dark-gray white cover" id="main" style="background:url(images/464656512.jpg) no-repeat center;">
+    <div class="vh-100 dt w-100 tc bg-dark-gray white cover" id="main" style="background:url(./assets/images/464656512.jpg) no-repeat center;">
       <div id="app" class="measure center"></div>
     </div>
-
-    <script id="facebookApiError" type="text/x-underscore-template" >
-      <div class="flex items-center justify-center pa4 bg-black white">
-      <svg class="w1" data-icon="info" viewBox="0 0 32 32" style="fill:currentcolor">
-        <title>info icon</title>
-        <path d="M16 0 A16 16 0 0 1 16 32 A16 16 0 0 1 16 0 M19 15 L13 15 L13 26 L19 26 z M16 6 A3 3 0 0 0 16 12 A3 3 0 0 0 16 6"></path>
-      </svg>
-      <span class="lh-title ml3"><%- _1FACEBOOK_ERROR %></span>
-    </div>
-    </script>
-
-    <script id="hello" type="text/x-underscore-template" >
-      <h1 class="ttu f1 f-headline-l mb1"><%- _1NOMINATE %></h1>
-      <p class="pb4-ns"><%- _1NOMINATE_DESC %></p>
-      <div id="errorFacebook">
-        <p class="pb4-ns"><%- _1NOMINATE_CALL %></p>
-      </div>
-      <div id="loadFacebook">
-        <div id="loadedFacebook" class="tc">
-          <p class="pb4-ns"><%- _1NOMINATE_LOADING %></p>
-          <div class="dib">
-            <div class="sk-fading-circle spinner">
-                <div class="sk-circle1 sk-circle"></div>
-                <div class="sk-circle2 sk-circle"></div>
-                <div class="sk-circle3 sk-circle"></div>
-                <div class="sk-circle4 sk-circle"></div>
-                <div class="sk-circle5 sk-circle"></div>
-                <div class="sk-circle6 sk-circle"></div>
-                <div class="sk-circle7 sk-circle"></div>
-                <div class="sk-circle8 sk-circle"></div>
-                <div class="sk-circle9 sk-circle"></div>
-                <div class="sk-circle10 sk-circle"></div>
-                <div class="sk-circle11 sk-circle"></div>
-                <div class="sk-circle12 sk-circle"></div>
-            </div>
-          </div>
-        </div>
-       </div>
-
-       <div class="friends-wrapper-dummy no-show"></div>
-    </script>
-
-    <script id="hellobtn" type="text/x-underscore-template">
-      <a class="btn-login amnesty-font f4 link dim ph5 pv3 mb2 dib ttu black bg-amnesty-yellow mw-80 pointer relative">
-        <span class="sk-fading-circle spinner">
-          <span class="sk-circle1 sk-circle"></span>
-          <span class="sk-circle2 sk-circle"></span>
-          <span class="sk-circle3 sk-circle"></span>
-          <span class="sk-circle4 sk-circle"></span>
-          <span class="sk-circle5 sk-circle"></span>
-          <span class="sk-circle6 sk-circle"></span>
-          <span class="sk-circle7 sk-circle"></span>
-          <span class="sk-circle8 sk-circle"></span>
-          <span class="sk-circle9 sk-circle"></span>
-          <span class="sk-circle10 sk-circle"></span>
-          <span class="sk-circle11 sk-circle"></span>
-          <span class="sk-circle12 sk-circle"></span>
-        </span>
-
-        <span class="button-label" id="facebookBtnText">
-          <%- _1NOMINATE_BTN %></a>
-        </span>
-    </script>
-
-    <script id="helloerror" type="text/x-underscore-template" >
-      <p class="pb4-ns"><%- _1NOMINATE_ERROR %></p>
-    </script>
-
-    <script id="friendslistitem" type="text/x-underscore-template" >
-      <div class="dtc w2 w3-ns v-mid">
-        <img src="<%- picture.data.url %>" class="ba b--black-10 db br2 w2 w3-ns h2 h3-ns"/>
-      </div>
-      <div class="dtc v-mid pl3 tl-ns pl4">
-        <h1 class="f4 f3-ns fw6 lh-title black mv0"><%- name %></h1>
-      </div>
-    </script>
-
-    <script id="friends" type="text/x-underscore-template" >
-          <h1 class="ttu f1 f-headline-l mb1"><%- _1NOMINATE %></h1>
-          <p class="pb4-ns"><%- _1NOMINATE_DESC %></p>
-          <p class="pb4-ns"><%- _2NOMINATE_CALL %></p>
-          <div class="friendsWrapper">
-            <div class="friendsContainer"></div>
-          </div>
-          <div class="flex items-center justify-center pa4" id="next-previous">
-          <a href="#0" id="previous" class="f4 no-underline white bg-animate hover-bg-amnesty-yellow hover-black inline-flex items-center pa3 ba border-box">
-              <svg class="w1 h1" data-icon="chevronLeft" viewBox="0 0 32 32" style="fill:currentcolor">
-                <title>chevronLeft icon</title>
-                <path d="M20 1 L24 5 L14 16 L24 27 L20 31 L6 16 z"></path>
-              </svg>
-            <span class="pl1">Previous</span>
-          </a>
-          <a href="#0" id="next" class="f4 no-underline white bg-animate hover-bg-amnesty-yellow hover-black inline-flex items-center pa3 ba border-box">
-            <span class="pr1">Next</span>
-            <svg class="w1 h1" data-icon="chevronRight" viewBox="0 0 32 32" style="fill:currentcolor">
-              <title>chevronRight icon</title>
-              <path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z"></path>
-            </svg>
-          </a>
-        </div>
-    </script>
-
-    <script id="friendsNone" type="text/x-underscore-template" >
-      <div class="flex items-center justify-center pa4 bg-black white">
-      <svg class="w1" data-icon="info" viewBox="0 0 32 32" style="fill:currentcolor">
-        <title>info icon</title>
-        <path d="M16 0 A16 16 0 0 1 16 32 A16 16 0 0 1 16 0 M19 15 L13 15 L13 26 L19 26 z M16 6 A3 3 0 0 0 16 12 A3 3 0 0 0 16 6"></path>
-      </svg>
-      <span class="lh-title ml3"><%- _2NOMINATE_NONE %></span>
-    </div>
-    </script>
-
-    <script id="friendsError" type="text/x-underscore-template" >
-      <div class="flex items-center justify-center pa4 bg-black white">
-      <svg class="w1" data-icon="info" viewBox="0 0 32 32" style="fill:currentcolor">
-        <title>info icon</title>
-        <path d="M16 0 A16 16 0 0 1 16 32 A16 16 0 0 1 16 0 M19 15 L13 15 L13 26 L19 26 z M16 6 A3 3 0 0 0 16 12 A3 3 0 0 0 16 6"></path>
-      </svg>
-      <span class="lh-title ml3"><%- _2NOMINATE_ERROR %></span>
-    </div>
-    </script>
-
-    <script id="share" type="text/x-underscore-template" >
-          <h1 class="ttu f1 f-headline-l mb1"><%- _1NOMINATE %></h1>
-          <p class="pb4-ns"><%- _1NOMINATE_DESC %></p>
-          <div id="errorShare">
-            <p><%- _3NOMINATE_CALL %></p>
-          </div>
-
-          <form class="pa4 black-80 pb0" id="shareForm">
-            <div>
-              <textarea id="comment" name="comment" class="db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2" spellcheck="true" rows="8"></textarea>
-            </div>
-          </form>
-            <div class="friendWrapper ml4 mr4 mb4 bg-white-80">
-              <div class="dtc w2 w3-ns v-mid">
-                <img src="<%- picture.data.url %>" class="ba b--black-10 db br2 w2 w3-ns h2 h3-ns"/>
-              </div>
-              <div class="dtc v-mid pl3 tl-ns pl4">
-                <h1 class="f4 f3-ns fw6 lh-title black mv0"><%- name %></h1>
-              </div>
-            </div>
-          <a class="shareForm amnesty-font f4 link dim ph5 pv3 pt3 mb2 dib ttu black bg-amnesty-yellow pointer relative">
-            <span class="sk-fading-circle spinner">
-              <span class="sk-circle1 sk-circle"></span>
-              <span class="sk-circle2 sk-circle"></span>
-              <span class="sk-circle3 sk-circle"></span>
-              <span class="sk-circle4 sk-circle"></span>
-              <span class="sk-circle5 sk-circle"></span>
-              <span class="sk-circle6 sk-circle"></span>
-              <span class="sk-circle7 sk-circle"></span>
-              <span class="sk-circle8 sk-circle"></span>
-              <span class="sk-circle9 sk-circle"></span>
-              <span class="sk-circle10 sk-circle"></span>
-              <span class="sk-circle11 sk-circle"></span>
-              <span class="sk-circle12 sk-circle"></span>
-            </span>
-            <span class="button-label"><%- _3NOMINATE_BTN_2 %></span>
-          </a>
-    </script>
-
-    <script id="shareerror" type="text/x-underscore-template" >
-      <p class="pb4-ns"><%- _3NOMINATE_ERROR %></p>
-      <p class="pb4-ns"><%- errorMessage %></p>
-    </script>
-
-    <script id="success" type="text/x-underscore-template" >
-      <h1 class="ttu f1 f-headline-l mb1"><%- _4NOMINATE %></h1>
-        <img class="pv3-ns w-30" src="images/tick.svg">
-        <p class="pb4-ns"><%- _4NOMINATE_DESC %></p>
-
-          <p><a class="nominateAgain amnesty-font f4 link dim ph5 pv3 mb2 dib ttu black bg-amnesty-yellow pointer relative mw-80">
-            <span class="sk-fading-circle spinner">
-              <span class="sk-circle1 sk-circle"></span>
-              <span class="sk-circle2 sk-circle"></span>
-              <span class="sk-circle3 sk-circle"></span>
-              <span class="sk-circle4 sk-circle"></span>
-              <span class="sk-circle5 sk-circle"></span>
-              <span class="sk-circle6 sk-circle"></span>
-              <span class="sk-circle7 sk-circle"></span>
-              <span class="sk-circle8 sk-circle"></span>
-              <span class="sk-circle9 sk-circle"></span>
-              <span class="sk-circle10 sk-circle"></span>
-              <span class="sk-circle11 sk-circle"></span>
-              <span class="sk-circle12 sk-circle"></span>
-            </span>
-          <%- _4NOMINATE_BTN_2 %></a>
-          </p>
-
-          <div class="iframeContainer">
-            <div class="iframeScrollWrapper">
-              <iframe src="<%- _4IFRAME %>" frameborder="0" allowfullscreen class="iframeInner"></iframe>
-            </div>
-          </div>
-
-    </script>
 
     <!-- vendor -->
 
