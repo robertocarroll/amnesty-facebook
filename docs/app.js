@@ -158,10 +158,12 @@ module.exports = PageableCollection.extend({
 });
 
 },{"../models/friend.js":4,"backbone.paginator":27}],3:[function(require,module,exports){
+(function (global){
 var _ = require('underscore');
+var Promise = require('es6-promise').Promise;
 
 module.exports = function() {
- ;(function (global) {
+
   var defaultLang = "en";
   var lang;
   var strings;
@@ -237,11 +239,10 @@ module.exports = function() {
       return loadStringsPromise;
     }
   };
-    global.dictionary = dictionary;
-  })(window);
 };
 
-},{"underscore":52}],4:[function(require,module,exports){
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"es6-promise":"es6-promise","underscore":52}],4:[function(require,module,exports){
 var Backbone = require('backbone');
 
 module.exports = Backbone.Model.extend({

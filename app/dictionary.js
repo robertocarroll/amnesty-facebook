@@ -1,7 +1,8 @@
 var _ = require('underscore');
+var Promise = require('es6-promise').Promise;
 
 module.exports = function() {
- ;(function (global) {
+
   var defaultLang = "en";
   var lang;
   var strings;
@@ -77,6 +78,4 @@ module.exports = function() {
       return loadStringsPromise;
     }
   };
-    global.dictionary = dictionary;
-  })(window);
 };
