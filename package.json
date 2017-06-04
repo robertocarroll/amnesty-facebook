@@ -20,6 +20,15 @@
   },
   "homepage": "https://github.com/wearethoughtfox/amnesty-facebook#readme",
   "devDependencies": {
+    "browserify": "^14.4.0",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-targethtml": "^0.2.6",
+    "handlebars": "^4.0.10",
+    "hbsfy": "^2.7.0",
     "http-server": "^0.9.0"
   },
   "dependencies": {
