@@ -1,5 +1,8 @@
-var $ = require('jquery');
+var $ = require('jquery')(window);
 var _ = require('underscore');
+var Backbone = require('backbone');
+var Marionette = require('backbone.marionette');
+Backbone.$ = $;
 var Promise = require('es6-promise').Promise;
 
 module.exports = (function () {
@@ -63,6 +66,7 @@ module.exports = (function () {
             url: stringsUrl,
             async: true,
             success: function (json) {
+
               strings = json;
               setLang(getLangFromQueryString() || defaultLang);
 

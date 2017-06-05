@@ -1,3 +1,8 @@
+var $ = require('jquery');
+var _ = require('underscore');
+var Backbone = require('backbone');
+Backbone.$ = $;
+var Marionette = require('backbone.marionette');
 var PageableCollection = require('backbone.paginator');
 var Friend = require('../models/friend.js');
 
