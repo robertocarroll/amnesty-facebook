@@ -28,7 +28,7 @@ var App = Backbone.Marionette.Application.extend({
       js.onerror = function () {
         reject("facebookLoadError");
       };
-      js.src = "vv";
+      js.src = "//connect.facebook.net/en_US/sdk.js";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
